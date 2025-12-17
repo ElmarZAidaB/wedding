@@ -81,7 +81,6 @@
       max-width:58vw;
     }
 
-    /* Desktop links */
     .links{
       display:flex;
       gap:8px;
@@ -103,7 +102,7 @@
       background:rgba(255,255,255,0.06);
     }
 
-    /* Mobile menu (sauber, kein Umbruch-Chaos) */
+    /* Mobile menu */
     .menu{display:none;}
     .menu summary{
       list-style:none;
@@ -126,7 +125,7 @@
       border:1px solid rgba(255,255,255,0.14);
       border-radius:16px;
       padding:10px;
-      min-width:200px;
+      min-width:220px;
       box-shadow:0 18px 50px rgba(0,0,0,0.35);
     }
     .menuPanel a{
@@ -189,17 +188,17 @@
       margin:0 auto 12px;
       display:inline-flex;
       align-items:center;
-      gap:10px;
+      gap:8px;
       padding:8px 14px;
       border-radius:999px;
       border:1px solid var(--accent2);
       background:rgba(179,106,94,0.10);
       font-size:12px;
-      letter-spacing:0.22em;
+      letter-spacing:0.18em;
       text-transform:uppercase;
       color:var(--accent);
     }
-    .kicker svg{width:16px; height:16px; opacity:0.9;}
+    .kicker svg{width:18px; height:18px; opacity:0.95;}
 
     .names{
       margin:10px 0 0;
@@ -213,7 +212,6 @@
     }
     @media (max-width: 520px){
       .names{white-space:normal;}
-      .names .break{display:block;}
     }
 
     .date{
@@ -363,6 +361,7 @@
         <a href="#details">Details</a>
         <a href="#antwort">Rückmeldung</a>
         <a href="#location">Location</a>
+        <a href="#park">Parkplatz &amp; Gondel</a>
         <a href="#faq">FAQ</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
@@ -373,6 +372,7 @@
           <a href="#details">Details</a>
           <a href="#antwort">Rückmeldung</a>
           <a href="#location">Location</a>
+          <a href="#park">Parkplatz &amp; Gondel</a>
           <a href="#faq">FAQ</a>
           <a href="#kontakt">Kontakt</a>
         </div>
@@ -385,22 +385,13 @@
       <div class="monogram" aria-hidden="true">A&E</div>
 
       <p class="kicker" aria-label="Hochzeit">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <!-- Ring links -->
-  <circle cx="9.6" cy="13.2" r="5.2" stroke="currentColor" stroke-width="1.5"/>
-
-  <!-- Ring rechts -->
-  <circle cx="14.4" cy="11.2" r="5.2" stroke="currentColor" stroke-width="1.5"/>
-
-  <!-- Diamond oben rechts (auf dem rechten Ring) -->
-  <path d="M14.4 3.2l2.1 2.2-2.1 2.2-2.1-2.2 2.1-2.2Z"
-        stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-
-  <!-- kleine Facettenlinien im Diamant (dezent) -->
-  <path d="M12.8 5.4h3.2M14.4 3.2v4.4"
-        stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
-</svg>
-
+        <!-- Ringe mit Diamant -->
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="9.6" cy="13.2" r="5.2" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="14.4" cy="11.2" r="5.2" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M14.4 3.2l2.1 2.2-2.1 2.2-2.1-2.2 2.1-2.2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M12.8 5.4h3.2M14.4 3.2v4.4" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+        </svg>
         <span>Wir heiraten</span>
       </p>
 
@@ -438,26 +429,26 @@
         <div class="kv" aria-label="Details">
           <div class="k">Datum</div><div class="v"><strong>Samstag, 27.06.2026</strong></div>
           <div class="k">Ort</div><div class="v">Art Deco Hotel Montana, Adligenswilerstrasse 22, 6002 Luzern</div>
-          <div class="k">Start</div><div class="v">Apéro ab ca. 17:00 Uhr</div>
-          <div class="k">Dinner</div><div class="v">ca. 19:00 Uhr</div>
-          <div class="k">Party</div><div class="v">ab ca. 22:00 Uhr</div>
+          <div class="k">Start</div><div class="v">Apéro ab ca. 17.00 Uhr</div>
+          <div class="k">Dinner</div><div class="v">ca. 19.00 Uhr</div>
+          <div class="k">Party</div><div class="v">ab ca. 22.00 Uhr</div>
         </div>
 
         <div class="divider2" aria-hidden="true"></div>
 
         <h2>Zeitplan</h2>
         <div class="kv" aria-label="Zeitplan">
-          <div class="k">17:00</div><div class="v">Apéro</div>
-          <div class="k">17:30</div><div class="v">Wechsel zum Abendessen</div>
-          <div class="k">19:00</div><div class="v">Abendessen</div>
-          <div class="k">22:00</div><div class="v">Party</div>
+          <div class="k">17.00</div><div class="v">Apéro</div>
+          <div class="k">17.30</div><div class="v">Wechsel zum Abendessen</div>
+          <div class="k">19.00</div><div class="v">Abendessen</div>
+          <div class="k">22.00</div><div class="v">Party</div>
         </div>
       </section>
 
       <aside>
         <section class="card section" id="antwort">
           <h2>Rückmeldung</h2>
-          <p>Bitte Zu oder Absage bis <strong>31.03.2026</strong>.</p>
+          <p>Bitte Zu oder Absage bis <strong>30.04.2026</strong>.</p>
           <p class="muted">Begleitpersonen sind in den Einladungen namentlich erwähnt.</p>
 
           <div class="cta">
@@ -466,7 +457,7 @@
           </div>
 
           <p class="muted" style="margin-top:12px; font-size:13px;">
-           
+            Tipp: Ein Formular ist am saubersten, dann ist alles direkt in einer Liste.
           </p>
         </section>
 
@@ -499,6 +490,36 @@
           <iframe
             title="Karte Hotel Montana"
             src="https://www.google.com/maps?q=Art%20Deco%20Hotel%20Montana%20Luzern&output=embed"
+            loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="card section" id="park" style="margin-top:14px;">
+      <h2>Parkplatz &amp; Gondel</h2>
+      <div class="two" style="margin-top:12px;">
+        <div>
+          <p><strong>Parkhaus Casino Palace</strong><br>
+            Haldenstrasse 6<br>
+            6006 Luzern</p>
+
+          <p class="muted" style="margin-top:10px;">
+            Dort überqueren Sie die Haldenstrasse und gehen in Fahrtrichtung des Bus bis zum Vorplatz mit dem Brunnen.
+            Dahinter befindet sich der Eingang zur Standseilbahn (ca. 100 m Fussmarsch).
+            Diese bringt Sie in nur <strong>60 Sekunden</strong> direkt in die Hotellobby.
+          </p>
+
+          <div class="cta">
+            <a class="btn secondary" href="https://maps.google.com/?q=Parkhaus%20Casino%20Palace%20Luzern" target="_blank" rel="noopener">
+              Parkhaus in Google Maps öffnen
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <iframe
+            title="Karte Parkhaus Casino Palace"
+            src="https://www.google.com/maps?q=Parkhaus%20Casino%20Palace%20Luzern&output=embed"
             loading="lazy"></iframe>
         </div>
       </div>
