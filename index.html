@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aida Beširović & Elmar Žiko, Hochzeit 27.06.2026</title>
-  <meta name="description" content="Einladung zur Hochzeit von Aida Beširović und Elmar Žiko. Alle Infos, Rückmeldung und Kontakt." />
+  <title>Aida Beširović & Elmar Žiko – Hochzeit 27.06.2026</title>
+  <meta name="description" content="Einladung zur Hochzeit von Aida Beširović und Elmar Žiko am 27.06.2026 in Luzern." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +15,10 @@
       --ink:#2b2f2b;
       --muted:#6f766f;
 
-      --bg-main:#e9efe9;
-      --bg-soft:#f6f9f6;
+      --bg1:#edf3ee;
+      --bg2:#f6faf7;
 
-      --accent:#b7a36b; /* Champagner */
+      --accent:#b7a36b;
       --accent-soft:rgba(183,163,107,0.22);
 
       --card:#ffffff;
@@ -36,8 +36,7 @@
       color:var(--ink);
       background:
         radial-gradient(700px 350px at 15% 10%, rgba(183,163,107,0.12), transparent 60%),
-        radial-gradient(600px 350px at 85% 90%, rgba(0,0,0,0.05), transparent 60%),
-        linear-gradient(180deg, var(--bg-soft), var(--bg-main));
+        linear-gradient(180deg, var(--bg2), var(--bg1));
       line-height:1.55;
     }
 
@@ -50,7 +49,7 @@
       top:0;
       z-index:10;
       backdrop-filter: blur(8px);
-      background:rgba(246,249,246,0.90);
+      background:rgba(246,250,247,0.95);
       border-bottom:1px solid var(--line);
     }
 
@@ -76,488 +75,210 @@
       max-width:65vw;
     }
 
-    .links{
-      display:flex;
-      gap:8px;
-      align-items:center;
-      flex-wrap:nowrap;
-    }
+    .links{display:flex; gap:8px;}
     .links a{
       font-size:13px;
       color:var(--muted);
       padding:7px 10px;
       border-radius:999px;
-      border:1px solid transparent;
-      white-space:nowrap;
     }
     .links a:hover{
-      text-decoration:none;
-      border-color:rgba(183,163,107,0.28);
-      background:rgba(183,163,107,0.10);
+      background:rgba(183,163,107,0.12);
       color:var(--ink);
+      text-decoration:none;
     }
 
-    /* Mobile menu */
     .menu{display:none;}
-    .menu summary{
-      list-style:none;
-      cursor:pointer;
-      font-size:13px;
-      color:var(--ink);
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(0,0,0,0.10);
-      background:rgba(255,255,255,0.96);
-      user-select:none;
-      white-space:nowrap;
-    }
-    .menu summary::-webkit-details-marker{display:none;}
-    .menuPanel{
-      position:absolute;
-      right:18px;
-      top:56px;
-      background:rgba(255,255,255,0.98);
-      border:1px solid rgba(0,0,0,0.10);
-      border-radius:16px;
-      padding:10px;
-      min-width:240px;
-      box-shadow:0 18px 50px rgba(0,0,0,0.16);
-    }
-    .menuPanel a{
-      display:block;
-      padding:10px 10px;
-      border-radius:12px;
-      color:var(--ink);
-      font-size:14px;
-    }
-    .menuPanel a:hover{
-      text-decoration:none;
-      background:rgba(183,163,107,0.10);
-    }
-
-    @media (max-width: 760px){
+    @media (max-width:760px){
       .links{display:none;}
-      .menu{display:block; position:relative;}
+      .menu{display:block;}
     }
 
-    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px 18px 70px;}
 
-    /* Hero */
     .hero{
       margin-top:16px;
-      border-radius:calc(var(--r) + 10px);
-      padding:34px 18px 26px;
+      padding:36px 18px 28px;
       background:var(--card);
-      border:1px solid rgba(0,0,0,0.08);
-      box-shadow:0 26px 56px rgba(0,0,0,0.08);
+      border-radius:calc(var(--r) + 8px);
+      border:1px solid var(--line);
+      box-shadow:0 24px 56px rgba(0,0,0,0.08);
       text-align:center;
-      position:relative;
-      overflow:hidden;
     }
-    .hero:before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background:
-        radial-gradient(520px 260px at 50% 0%, rgba(183,163,107,0.14), transparent 60%);
-      pointer-events:none;
-    }
-    .hero > *{position:relative; z-index:1;}
 
     .tag{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 14px;
+      display:inline-block;
+      padding:8px 16px;
       border-radius:999px;
       border:1px solid var(--accent-soft);
-      background:rgba(183,163,107,0.08);
-      color:var(--accent);
-      letter-spacing:0.16em;
-      text-transform:uppercase;
+      background:rgba(183,163,107,0.10);
       font-size:12px;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      color:var(--accent);
     }
-    .tag svg{width:18px; height:18px;}
 
     .names{
-      margin:14px 0 0;
+      margin:16px 0 0;
       font-family:"Playfair Display", serif;
       font-weight:600;
       letter-spacing:0.06em;
       text-transform:uppercase;
-      font-size:clamp(24px, 3.4vw, 40px);
+      font-size:clamp(26px, 3.5vw, 42px);
       line-height:1.15;
-      white-space:nowrap;
-    }
-    @media (max-width: 560px){
-      .names{white-space:normal;}
     }
 
-.heroMeta{
-  margin-top:10px;
-  color:var(--muted);
-  font-size:16px;
-  text-align:center;
-}
-
-.heroMeta strong{
-  display:block;
-  font-family:"Playfair Display", serif;
-  font-size:20px;
-  letter-spacing:0.10em;
-  text-transform:uppercase;
-  color:var(--ink);
-  margin-bottom:4px;
-}
+    .heroMeta{
+      margin-top:12px;
+      font-size:16px;
+      color:var(--muted);
+    }
 
     .heroMeta strong{
+      display:block;
+      font-family:"Playfair Display", serif;
+      font-size:20px;
+      letter-spacing:0.10em;
+      text-transform:uppercase;
       color:var(--ink);
-      border-bottom:1px solid var(--accent-soft);
-      padding-bottom:2px;
+      margin-bottom:4px;
     }
 
     .divider{
-      margin:16px auto 10px;
-      width:190px;
+      margin:18px auto 12px;
+      width:180px;
       height:1px;
-      background:linear-gradient(to right, transparent, rgba(183,163,107,0.80), transparent);
+      background:linear-gradient(to right, transparent, var(--accent), transparent);
     }
 
-    .countdownWrap{margin-top:10px;}
-    .countLabel{margin:0 0 10px; font-size:13px; color:var(--muted);}
-
-    .countdown{display:flex; gap:10px; justify-content:center; flex-wrap:wrap;}
-    .cd{
-      min-width:92px;
-      border:1px solid rgba(0,0,0,0.08);
-      border-radius:16px;
-      background:var(--bg-soft);
-      padding:12px 12px;
-      text-align:center;
-    }
-    .cd .n{font-size:18px; font-weight:600;}
-    .cd .l{font-size:11px; color:var(--muted); letter-spacing:0.10em; text-transform:uppercase;}
-
-    /* Sections */
-    .grid{display:grid; grid-template-columns:1fr; gap:14px; margin-top:16px;}
-    @media (min-width: 900px){
-      .grid{grid-template-columns:1.12fr 0.88fr;}
-    }
-
-    .card{
+    .section{
+      margin-top:18px;
       background:var(--card);
-      border:1px solid rgba(0,0,0,0.08);
       border-radius:var(--r);
+      border:1px solid var(--line);
       padding:22px 20px;
-      box-shadow:0 18px 36px rgba(0,0,0,0.08);
+      box-shadow:0 18px 40px rgba(0,0,0,0.08);
+      scroll-margin-top:110px;
     }
 
     h2{
       font-family:"Playfair Display", serif;
-      margin:0 0 10px;
       font-size:22px;
-      letter-spacing:0.02em;
-      color:var(--ink);
-    }
-
-    .subhead{
-      display:inline-block;
-      margin-top:-2px;
-      padding-bottom:6px;
-      border-bottom:1px solid var(--accent-soft);
+      margin:0 0 12px;
     }
 
     p{margin:0 0 10px;}
     .muted{color:var(--muted);}
 
-    .kv{display:grid; grid-template-columns:120px 1fr; gap:10px 14px; margin-top:10px;}
-    .k{color:var(--muted); font-size:13px;}
-    .v{font-size:14px;}
-
-    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; align-items:center;}
+    .kv{
+      display:grid;
+      grid-template-columns:120px 1fr;
+      gap:10px 14px;
+      font-size:14px;
+    }
+    .k{color:var(--muted);}
 
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
+      display:inline-block;
+      margin-top:12px;
+      padding:12px 18px;
       border-radius:14px;
-      padding:12px 16px;
-      border:1px solid rgba(0,0,0,0.10);
-      font-weight:500;
-      font-size:14px;
-      min-width:180px;
-      cursor:pointer;
-      transition: transform 180ms ease, filter 180ms ease;
-      text-decoration:none;
-    }
-    .btn:hover{filter:brightness(1.02); transform: translateY(-1px);}
-
-    .btn.primary{
       background:linear-gradient(180deg, #c9b57f, #b7a36b);
-      border-color:rgba(183,163,107,0.55);
       color:#1b1a16;
-      box-shadow:0 14px 34px rgba(183,163,107,0.18);
-    }
-
-    .textlink{
-      color:var(--accent);
       font-weight:500;
+      box-shadow:0 14px 30px rgba(183,163,107,0.18);
     }
-    .textlink:hover{text-decoration:underline;}
-
-    .divider2{
-      height:1px;
-      background:linear-gradient(to right, transparent, rgba(0,0,0,0.10), transparent);
-      margin:14px 0;
-    }
-
-    .two{display:grid; grid-template-columns:1fr; gap:14px; align-items:start;}
-    @media (min-width: 900px){
-      .two{grid-template-columns:1fr 1fr;}
-    }
+    .btn:hover{text-decoration:none; filter:brightness(1.03);}
 
     iframe{
       width:100%;
-      height:280px;
+      height:260px;
       border:0;
       border-radius:16px;
-      box-shadow:0 12px 28px rgba(0,0,0,0.10);
+      margin-top:12px;
     }
 
     footer{
-      margin-top:18px;
-      padding-top:18px;
-      border-top:1px solid rgba(0,0,0,0.08);
+      margin-top:24px;
       text-align:center;
-      color:var(--muted);
       font-size:12px;
+      color:var(--muted);
     }
-
-    .section{scroll-margin-top:110px;}
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="nav">
-      <div class="brand">Aida Beširović &amp; Elmar Žiko</div>
+<header>
+  <div class="nav">
+    <div class="brand">Aida Beširović &amp; Elmar Žiko</div>
+    <nav class="links">
+      <a href="#details">Details</a>
+      <a href="#antwort">Rückmeldung</a>
+      <a href="#location">Location</a>
+      <a href="#park">Parkplatz</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
 
-      <nav class="links" aria-label="Navigation">
-        <a href="#details">Details</a>
-        <a href="#antwort">Rückmeldung</a>
-        <a href="#location">Location</a>
-        <a href="#park">Parkplatz &amp; Gondel</a>
-        <a href="#faq">FAQ</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
+<main class="wrap">
 
-      <details class="menu">
-        <summary>Menü</summary>
-        <div class="menuPanel" role="menu" aria-label="Navigation">
-          <a href="#details">Details</a>
-          <a href="#antwort">Rückmeldung</a>
-          <a href="#location">Location</a>
-          <a href="#park">Parkplatz &amp; Gondel</a>
-          <a href="#faq">FAQ</a>
-          <a href="#kontakt">Kontakt</a>
-        </div>
-      </details>
+  <section class="hero">
+    <div class="tag">Einladung zur Hochzeit</div>
+
+    <h1 class="names">Aida Beširović &amp; Elmar Žiko</h1>
+
+    <div class="divider"></div>
+
+    <p class="heroMeta">
+      <strong>Samstag, 27.06.2026</strong>
+      Luzern · Art Deco Hotel Montana
+    </p>
+  </section>
+
+  <section class="section" id="details">
+    <h2>Details</h2>
+    <div class="kv">
+      <div class="k">Beginn</div><div>Apéro ab ca. 17.00 Uhr</div>
+      <div class="k">Dinner</div><div>ca. 19.00 Uhr</div>
+      <div class="k">Dresscode</div><div>Formal</div>
+      <div class="k">Kinder</div><div>Kinder sind herzlich willkommen</div>
     </div>
-  </header>
+  </section>
 
-  <main class="wrap">
-    <section class="hero" id="top">
-      <div class="tag" aria-label="Einladung zur Hochzeit">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="9.6" cy="13.2" r="5.2" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="14.4" cy="11.2" r="5.2" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M14.4 3.2l2.1 2.2-2.1 2.2-2.1-2.2 2.1-2.2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-          <path d="M12.8 5.4h3.2M14.4 3.2v4.4" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
-        </svg>
-        <span>Einladung zur Hochzeit</span>
-      </div>
+  <section class="section" id="antwort">
+    <h2>Rückmeldung</h2>
+    <p>Bitte Zu oder Absage bis <strong>30.04.2026</strong>.</p>
+    <p class="muted">Begleitpersonen sind in der Einladung namentlich genannt.</p>
+    <a class="btn" href="https://forms.gle/Y2LeHdSsWZ6bYEG59" target="_blank">Zur Rückmeldung</a>
+  </section>
 
-      <h1 class="names">AIDA BEŠIROVIĆ &amp; ELMAR ŽIKO</h1>
+  <section class="section" id="location">
+    <h2>Location</h2>
+    <p><strong>Art Deco Hotel Montana</strong><br>Adligenswilerstrasse 22, Luzern</p>
+    <a class="btn" href="https://maps.google.com/?q=Art%20Deco%20Hotel%20Montana%20Luzern" target="_blank">Auf Google Maps öffnen</a>
+    <iframe src="https://www.google.com/maps?q=Art%20Deco%20Hotel%20Montana%20Luzern&output=embed"></iframe>
+  </section>
 
-      <div class="divider" aria-hidden="true"></div>
+  <section class="section" id="park">
+    <h2>Parkplatz &amp; Gondel</h2>
+    <p><strong>Parkhaus Casino Palace</strong></p>
+    <p class="muted">
+      Nach dem Überqueren der Strasse erreicht ihr die Standseilbahn, die euch in 60 Sekunden direkt in die Hotellobby bringt.
+    </p>
+    <a class="btn" href="https://maps.google.com/?q=Parkhaus%20Casino%20Palace%20Luzern" target="_blank">Parkhaus auf Google Maps</a>
+  </section>
 
-      <p class="heroMeta"><strong>Samstag, 27.06.2026</strong> · Luzern · Art Deco Hotel Montana</p>
+  <section class="section" id="faq">
+    <h2>FAQ</h2>
+    <p><strong>Übernachtung?</strong><br>
+      Einen Link für Zimmer mit Rabatt im Hotel Montana stellen wir hier in Kürze bereit.</p>
+  </section>
 
-      <div class="countdownWrap" aria-label="Countdown bis zur Hochzeit">
-        <p class="countLabel">Bis zum grossen Tag dauert es noch</p>
-        <div class="countdown">
-          <div class="cd"><div class="n" id="cdD">--</div><div class="l">Tage</div></div>
-          <div class="cd"><div class="n" id="cdH">--</div><div class="l">Std</div></div>
-          <div class="cd"><div class="n" id="cdM">--</div><div class="l">Min</div></div>
-          <div class="cd"><div class="n" id="cdS">--</div><div class="l">Sek</div></div>
-        </div>
-      </div>
-    </section>
+  <footer>
+    © 2026 Aida Beširović &amp; Elmar Žiko
+  </footer>
 
-    <div class="grid">
-      <section class="card section" id="details">
-        <h2><span class="subhead">Details</span></h2>
-        <p class="muted">Hier findet ihr alle Infos zur Hochzeitsparty.</p>
-
-        <div class="kv" aria-label="Details">
-          <div class="k">Datum</div><div class="v"><strong>Samstag, 27.06.2026</strong></div>
-          <div class="k">Ort</div><div class="v">Art Deco Hotel Montana, Adligenswilerstrasse 22, 6002 Luzern</div>
-          <div class="k">Start</div><div class="v">Apéro ab ca. 17.00 Uhr</div>
-          <div class="k">Dinner</div><div class="v">ca. 19.00 Uhr</div>
-          <div class="k">Party</div><div class="v">ab ca. 22.00 Uhr</div>
-        </div>
-
-        <div class="divider2" aria-hidden="true"></div>
-
-        <h2><span class="subhead">Zeitplan</span></h2>
-        <div class="kv" aria-label="Zeitplan">
-          <div class="k">17.00</div><div class="v">Apéro</div>
-          <div class="k">17.30</div><div class="v">Wechsel zum Abendessen</div>
-          <div class="k">19.00</div><div class="v">Abendessen</div>
-          <div class="k">22.00</div><div class="v">Party</div>
-        </div>
-      </section>
-
-      <aside>
-        <section class="card section" id="antwort">
-          <h2><span class="subhead">Rückmeldung</span></h2>
-          <p>Bitte Zu oder Absage bis <strong>30.04.2026</strong>.</p>
-          <p class="muted">Begleitpersonen sind in den Einladungen namentlich erwähnt.</p>
-
-          <div class="cta">
-            <a class="btn primary" href="https://forms.gle/Y2LeHdSsWZ6bYEG59" target="_blank" rel="noopener">Rückmeldung zur Hochzeit</a>
-          </div>
-
-          <p class="muted" style="margin-top:10px; font-size:13px;">
-            Falls nötig: <a class="textlink" href="mailto:elmarzaidab@gmail.com?subject=Rückmeldung%2027.06.2026&body=Name:%0D%0AAnzahl%20Erwachsene:%0D%0AAnzahl%20Kinder:%0D%0AZu%20oder%20Absage:%0D%0AAllergien/Wünsche:%0D%0A">per E-Mail antworten</a>
-          </p>
-        </section>
-
-        <section class="card" style="margin-top:14px;">
-          <h2><span class="subhead">Geschenke</span></h2>
-          <p>Eure Anwesenheit ist für uns das schönste Geschenk.</p>
-          <p class="muted">Weitere Aufmerksamkeiten sind selbstverständlich freiwillig.</p>
-        </section>
-      </aside>
-    </div>
-
-    <section class="card section" id="location" style="margin-top:14px;">
-      <h2><span class="subhead">Location</span></h2>
-      <div class="two" style="margin-top:12px;">
-        <div>
-          <p><strong>Art Deco Hotel Montana</strong><br>
-            Adligenswilerstrasse 22<br>
-            6002 Luzern</p>
-
-          <p class="muted">
-            Übernachtung: Einen Link für Zimmer mit Rabatt im Hotel Montana stellen wir hier in Kürze bereit.
-          </p>
-
-          <div class="cta">
-            <a class="btn primary" href="https://maps.google.com/?q=Art%20Deco%20Hotel%20Montana%20Luzern" target="_blank" rel="noopener">Auf Google öffnen</a>
-          </div>
-        </div>
-
-        <div>
-          <iframe title="Karte Hotel Montana"
-                  src="https://www.google.com/maps?q=Art%20Deco%20Hotel%20Montana%20Luzern&output=embed"
-                  loading="lazy"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <section class="card section" id="park" style="margin-top:14px;">
-      <h2><span class="subhead">Parkplatz &amp; Gondel</span></h2>
-      <div class="two" style="margin-top:12px;">
-        <div>
-          <p><strong>Parkhaus Casino Palace</strong><br>
-            Haldenstrasse 6<br>
-            6006 Luzern</p>
-
-          <p class="muted" style="margin-top:10px;">
-            Dort überqueren Sie die Haldenstrasse und gehen in Fahrtrichtung des Bus bis zum Vorplatz mit dem Brunnen.
-            Dahinter befindet sich der Eingang zur Standseilbahn (ca. 100 m Fussmarsch).
-            Diese bringt Sie in <strong>60 Sekunden</strong> direkt in die Hotellobby.
-          </p>
-
-          <div class="cta">
-            <a class="btn primary" href="https://maps.google.com/?q=Parkhaus%20Casino%20Palace%20Luzern" target="_blank" rel="noopener">Auf Google öffnen</a>
-          </div>
-        </div>
-
-        <div>
-          <iframe title="Karte Parkhaus Casino Palace"
-                  src="https://www.google.com/maps?q=Parkhaus%20Casino%20Palace%20Luzern&output=embed"
-                  loading="lazy"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <section class="card section" id="faq" style="margin-top:14px;">
-      <h2><span class="subhead">FAQ</span></h2>
-
-      <p><strong>Dürfen Kinder mitkommen?</strong><br>
-        Ja, Kinder sind herzlich willkommen.</p>
-
-      <p><strong>Begleitungen?</strong><br>
-        Begleitpersonen sind in den Einladungen namentlich erwähnt.</p>
-
-      <p><strong>Essen, Allergien, Wünsche?</strong><br>
-        Bitte direkt im Rückschreiben angeben. Wir berücksichtigen das so gut wie möglich.</p>
-
-      <p><strong>Dresscode?</strong><br>
-        <strong>Formal</strong><br>
-        Frauen in Abendkleidern und Männer in Anzug oder Hemd.</p>
-
-      <p><strong>Anreise und Parkieren?</strong><br>
-        Die Location erreicht ihr am besten mit dem Auto. Parkieren Sie bitte im Parkhaus Casino Palace. Nach dem Überqueren der Strasse bringt dich die hoteleigene Standseilbahn direkt in die Lobby.</p>
-
-      <p><strong>Übernachtung?</strong><br>
-        Wer im Hotel Montana oder in der Nähe übernachten möchte, bucht am besten früh. Einen Link für Zimmer mit Rabatt im Hotel Montana stellen wir hier in Kürze bereit.</p>
-    </section>
-
-    <section class="card section" id="kontakt" style="margin-top:14px;">
-      <h2><span class="subhead">Kontakt</span></h2>
-      <p class="muted">Fragen oder Unklarheiten, schreibt uns direkt.</p>
-
-      <div class="kv" style="margin-top:10px;">
-        <div class="k">WhatsApp / SMS</div><div class="v"><a class="textlink" href="tel:+41763320726">+41 76 332 07 26</a></div>
-        <div class="k">E-Mail</div><div class="v"><a class="textlink" href="mailto:elmarzaidab@gmail.com">elmarzaidab@gmail.com</a></div>
-      </div>
-    </section>
-
-    <footer>
-      © 2026 Aida Beširović &amp; Elmar Žiko
-    </footer>
-  </main>
-
-  <script>
-    (function(){
-      const target = new Date('2026-06-27T17:00:00');
-      function pad(n){ return String(n).padStart(2,'0'); }
-
-      function tick(){
-        const now = new Date();
-        let diff = target.getTime() - now.getTime();
-        if (!isFinite(diff)) return;
-        if (diff < 0) diff = 0;
-
-        const totalSec = Math.floor(diff / 1000);
-        const days = Math.floor(totalSec / (3600*24));
-        const hours = Math.floor((totalSec % (3600*24)) / 3600);
-        const mins = Math.floor((totalSec % 3600) / 60);
-        const secs = totalSec % 60;
-
-        document.getElementById('cdD').textContent = pad(days);
-        document.getElementById('cdH').textContent = pad(hours);
-        document.getElementById('cdM').textContent = pad(mins);
-        document.getElementById('cdS').textContent = pad(secs);
-      }
-
-      tick();
-      setInterval(tick, 1000);
-    })();
-  </script>
+</main>
 </body>
 </html>
