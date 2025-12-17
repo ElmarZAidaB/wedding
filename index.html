@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aida Beširović & Elmar Žiko, Hochzeit 27.06.2026</title>
-  <meta name="description" content="Hochzeitswebsite von Aida Beširović und Elmar Žiko. Alle Infos, Rückmeldung und Kontakt." />
+  <meta name="description" content="Einladung zur Hochzeit von Aida Beširović und Elmar Žiko. Alle Infos, Rückmeldung und Kontakt." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,20 +12,15 @@
 
   <style>
     :root{
-      /* Typo */
       --ink:#2b2f2b;
       --muted:#6f766f;
 
-      /* Salbei Hintergrund */
       --bg-main:#e9efe9;
       --bg-soft:#f6f9f6;
-      --bg-accent:#d6dfd6;
 
-      /* Champagner Akzent (edler als Gold/Kupfer) */
-      --accent:#b7a36b;
+      --accent:#b7a36b; /* Champagner */
       --accent-soft:rgba(183,163,107,0.22);
 
-      /* Cards */
       --card:#ffffff;
       --line:rgba(0,0,0,0.08);
 
@@ -50,13 +45,12 @@
     a:hover{text-decoration:underline;}
     .accent{color:var(--accent);}
 
-    /* Header */
     header{
       position:sticky;
       top:0;
       z-index:10;
       backdrop-filter: blur(8px);
-      background:rgba(246,249,246,0.86);
+      background:rgba(246,249,246,0.90);
       border-bottom:1px solid var(--line);
     }
 
@@ -65,29 +59,28 @@
       margin:0 auto;
       padding:14px 18px;
       display:flex;
-      justify-content:space-between;
       align-items:center;
+      justify-content:space-between;
       gap:12px;
     }
 
     .brand{
       font-family:"Playfair Display", serif;
-      letter-spacing:0.12em;
+      letter-spacing:0.10em;
       text-transform:uppercase;
       font-size:12px;
       color:var(--muted);
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
-      max-width:60vw;
+      max-width:65vw;
     }
 
     .links{
       display:flex;
       gap:8px;
-      flex-wrap:nowrap;
-      justify-content:flex-end;
       align-items:center;
+      flex-wrap:nowrap;
     }
     .links a{
       font-size:13px;
@@ -114,7 +107,7 @@
       padding:8px 12px;
       border-radius:999px;
       border:1px solid rgba(0,0,0,0.10);
-      background:rgba(255,255,255,0.9);
+      background:rgba(255,255,255,0.96);
       user-select:none;
       white-space:nowrap;
     }
@@ -128,7 +121,7 @@
       border-radius:16px;
       padding:10px;
       min-width:240px;
-      box-shadow:0 18px 50px rgba(0,0,0,0.18);
+      box-shadow:0 18px 50px rgba(0,0,0,0.16);
     }
     .menuPanel a{
       display:block;
@@ -145,7 +138,6 @@
     @media (max-width: 760px){
       .links{display:none;}
       .menu{display:block; position:relative;}
-      .brand{max-width:64vw;}
     }
 
     .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
@@ -154,42 +146,25 @@
     .hero{
       margin-top:16px;
       border-radius:calc(var(--r) + 10px);
-      padding:38px 18px 28px;
+      padding:34px 18px 26px;
       background:var(--card);
       border:1px solid rgba(0,0,0,0.08);
-      box-shadow:0 28px 60px rgba(0,0,0,0.08);
+      box-shadow:0 26px 56px rgba(0,0,0,0.08);
+      text-align:center;
       position:relative;
       overflow:hidden;
-      text-align:center;
     }
-
     .hero:before{
       content:"";
       position:absolute;
       inset:-2px;
       background:
-        radial-gradient(520px 260px at 50% 0%, rgba(183,163,107,0.16), transparent 60%),
-        radial-gradient(520px 260px at 0% 40%, rgba(0,0,0,0.04), transparent 62%);
+        radial-gradient(520px 260px at 50% 0%, rgba(183,163,107,0.14), transparent 60%);
       pointer-events:none;
     }
     .hero > *{position:relative; z-index:1;}
 
-    .monogram{
-      width:52px; height:52px;
-      margin:0 auto 10px;
-      border-radius:999px;
-      border:1px solid rgba(0,0,0,0.10);
-      display:grid;
-      place-items:center;
-      background:rgba(246,249,246,0.95);
-      font-family:"Playfair Display", serif;
-      font-weight:600;
-      letter-spacing:0.06em;
-      color:var(--ink);
-    }
-
-    .kicker{
-      margin:0 auto 12px;
+    .tag{
       display:inline-flex;
       align-items:center;
       gap:8px;
@@ -197,59 +172,48 @@
       border-radius:999px;
       border:1px solid var(--accent-soft);
       background:rgba(183,163,107,0.08);
-      font-size:12px;
-      letter-spacing:0.18em;
-      text-transform:uppercase;
       color:var(--accent);
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      font-size:12px;
     }
-    .kicker svg{width:18px; height:18px; opacity:0.95;}
+    .tag svg{width:18px; height:18px;}
 
     .names{
-      margin:10px 0 0;
+      margin:14px 0 0;
       font-family:"Playfair Display", serif;
       font-weight:600;
-      letter-spacing:0.07em;
+      letter-spacing:0.06em;
       text-transform:uppercase;
       font-size:clamp(24px, 3.4vw, 40px);
-      line-height:1.12;
+      line-height:1.15;
       white-space:nowrap;
     }
     @media (max-width: 560px){
       .names{white-space:normal;}
     }
 
-    .date{
-      margin:10px 0 0;
-      font-size:16px;
+    .heroMeta{
+      margin-top:10px;
       color:var(--muted);
+      font-size:16px;
     }
-    .date strong{
+    .heroMeta strong{
       color:var(--ink);
       border-bottom:1px solid var(--accent-soft);
       padding-bottom:2px;
     }
 
-    .sub{
-      margin:6px 0 0;
-      color:var(--muted);
-      font-size:14px;
-    }
-    .sub strong{color:var(--accent); font-weight:600;}
-
     .divider{
       margin:16px auto 10px;
-      width:210px;
+      width:190px;
       height:1px;
-      background:linear-gradient(to right, transparent, rgba(183,163,107,0.78), transparent);
+      background:linear-gradient(to right, transparent, rgba(183,163,107,0.80), transparent);
     }
 
-    /* Countdown */
-    .countdownWrap{margin-top:12px;}
-    .countLabel{
-      margin:0 0 10px;
-      font-size:13px;
-      color:var(--muted);
-    }
+    .countdownWrap{margin-top:10px;}
+    .countLabel{margin:0 0 10px; font-size:13px; color:var(--muted);}
+
     .countdown{display:flex; gap:10px; justify-content:center; flex-wrap:wrap;}
     .cd{
       min-width:92px;
@@ -262,7 +226,7 @@
     .cd .n{font-size:18px; font-weight:600;}
     .cd .l{font-size:11px; color:var(--muted); letter-spacing:0.10em; text-transform:uppercase;}
 
-    /* Layout */
+    /* Sections */
     .grid{display:grid; grid-template-columns:1fr; gap:14px; margin-top:16px;}
     @media (min-width: 900px){
       .grid{grid-template-columns:1.12fr 0.88fr;}
@@ -273,7 +237,7 @@
       border:1px solid rgba(0,0,0,0.08);
       border-radius:var(--r);
       padding:22px 20px;
-      box-shadow:0 20px 40px rgba(0,0,0,0.08);
+      box-shadow:0 18px 36px rgba(0,0,0,0.08);
     }
 
     h2{
@@ -281,7 +245,14 @@
       margin:0 0 10px;
       font-size:22px;
       letter-spacing:0.02em;
-      color:var(--accent);
+      color:var(--ink);
+    }
+
+    .subhead{
+      display:inline-block;
+      margin-top:-2px;
+      padding-bottom:6px;
+      border-bottom:1px solid var(--accent-soft);
     }
 
     p{margin:0 0 10px;}
@@ -291,7 +262,7 @@
     .k{color:var(--muted); font-size:13px;}
     .v{font-size:14px;}
 
-    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;}
+    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; align-items:center;}
 
     .btn{
       display:inline-flex;
@@ -299,29 +270,29 @@
       justify-content:center;
       gap:10px;
       border-radius:14px;
-      padding:12px 14px;
+      padding:12px 16px;
       border:1px solid rgba(0,0,0,0.10);
       font-weight:500;
       font-size:14px;
-      min-width:170px;
+      min-width:180px;
       cursor:pointer;
       transition: transform 180ms ease, filter 180ms ease;
+      text-decoration:none;
     }
-    .btn:hover{filter:brightness(1.02); text-decoration:none; transform: translateY(-1px);}
+    .btn:hover{filter:brightness(1.02); transform: translateY(-1px);}
 
-    .btn.accent{
+    .btn.primary{
       background:linear-gradient(180deg, #c9b57f, #b7a36b);
       border-color:rgba(183,163,107,0.55);
       color:#1b1a16;
-      box-shadow:0 14px 34px rgba(183,163,107,0.20);
+      box-shadow:0 14px 34px rgba(183,163,107,0.18);
     }
 
-    .btn.secondary{
-      background:rgba(255,255,255,0.95);
-      color:var(--ink);
-      border-color:rgba(183,163,107,0.25);
-      box-shadow:none;
+    .textlink{
+      color:var(--accent);
+      font-weight:500;
     }
+    .textlink:hover{text-decoration:underline;}
 
     .divider2{
       height:1px;
@@ -339,7 +310,7 @@
       height:280px;
       border:0;
       border-radius:16px;
-      box-shadow:0 14px 34px rgba(0,0,0,0.10);
+      box-shadow:0 12px 28px rgba(0,0,0,0.10);
     }
 
     footer{
@@ -385,24 +356,21 @@
 
   <main class="wrap">
     <section class="hero" id="top">
-      <div class="monogram" aria-hidden="true">A&amp;E</div>
-
-      <p class="kicker" aria-label="Hochzeit">
+      <div class="tag" aria-label="Einladung zur Hochzeit">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <circle cx="9.6" cy="13.2" r="5.2" stroke="currentColor" stroke-width="1.5"/>
           <circle cx="14.4" cy="11.2" r="5.2" stroke="currentColor" stroke-width="1.5"/>
           <path d="M14.4 3.2l2.1 2.2-2.1 2.2-2.1-2.2 2.1-2.2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
           <path d="M12.8 5.4h3.2M14.4 3.2v4.4" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
         </svg>
-        <span>Wir heiraten</span>
-      </p>
+        <span>Einladung zur Hochzeit</span>
+      </div>
 
-      <h1 class="names" aria-label="Namen">AIDA BEŠIROVIĆ &amp; ELMAR ŽIKO</h1>
+      <h1 class="names">AIDA BEŠIROVIĆ &amp; ELMAR ŽIKO</h1>
 
       <div class="divider" aria-hidden="true"></div>
 
-      <p class="date"><strong>27.06.2026</strong> · Luzern</p>
-      <p class="sub"><strong>Hochzeitsparty</strong> im Art Deco Hotel Montana</p>
+      <p class="heroMeta"><strong>Samstag, 27.06.2026</strong> · Luzern · Art Deco Hotel Montana</p>
 
       <div class="countdownWrap" aria-label="Countdown bis zur Hochzeit">
         <p class="countLabel">Bis zum grossen Tag dauert es noch</p>
@@ -417,13 +385,9 @@
 
     <div class="grid">
       <section class="card section" id="details">
-        <h2>Einladung</h2>
-        <p>Gemeinsam mit unseren Familien laden wir euch ein, unsere Hochzeit zu feiern.</p>
-        <p class="muted">Alle Infos sind hier gesammelt, damit es für alle einfach ist.</p>
+        <h2><span class="subhead">Details</span></h2>
+        <p class="muted">Hier findet ihr alle Infos zur Hochzeitsparty.</p>
 
-        <div class="divider2" aria-hidden="true"></div>
-
-        <h2>Details</h2>
         <div class="kv" aria-label="Details">
           <div class="k">Datum</div><div class="v"><strong>Samstag, 27.06.2026</strong></div>
           <div class="k">Ort</div><div class="v">Art Deco Hotel Montana, Adligenswilerstrasse 22, 6002 Luzern</div>
@@ -434,7 +398,7 @@
 
         <div class="divider2" aria-hidden="true"></div>
 
-        <h2>Zeitplan</h2>
+        <h2><span class="subhead">Zeitplan</span></h2>
         <div class="kv" aria-label="Zeitplan">
           <div class="k">17.00</div><div class="v">Apéro</div>
           <div class="k">17.30</div><div class="v">Wechsel zum Abendessen</div>
@@ -445,22 +409,21 @@
 
       <aside>
         <section class="card section" id="antwort">
-          <h2>Rückmeldung</h2>
+          <h2><span class="subhead">Rückmeldung</span></h2>
           <p>Bitte Zu oder Absage bis <strong>30.04.2026</strong>.</p>
           <p class="muted">Begleitpersonen sind in den Einladungen namentlich erwähnt.</p>
 
           <div class="cta">
-            <a class="btn accent" href="https://forms.gle/Y2LeHdSsWZ6bYEG59" target="_blank" rel="noopener">Rückmeldung zur Hochzeit</a>
-            <a class="btn secondary" href="mailto:elmarzaidab@gmail.com?subject=Rückmeldung%2027.06.2026&body=Name:%0D%0AAnzahl%20Erwachsene:%0D%0AAnzahl%20Kinder:%0D%0AZu%20oder%20Absage:%0D%0AAllergien/Wünsche:%0D%0A">Per E-Mail antworten</a>
+            <a class="btn primary" href="https://forms.gle/Y2LeHdSsWZ6bYEG59" target="_blank" rel="noopener">Rückmeldung zur Hochzeit</a>
           </div>
 
-          <p class="muted" style="margin-top:12px; font-size:13px;">
-            Tipp: Das Formular ist am einfachsten, dann ist alles direkt sauber in einer Liste.
+          <p class="muted" style="margin-top:10px; font-size:13px;">
+            Falls nötig: <a class="textlink" href="mailto:elmarzaidab@gmail.com?subject=Rückmeldung%2027.06.2026&body=Name:%0D%0AAnzahl%20Erwachsene:%0D%0AAnzahl%20Kinder:%0D%0AZu%20oder%20Absage:%0D%0AAllergien/Wünsche:%0D%0A">per E-Mail antworten</a>
           </p>
         </section>
 
         <section class="card" style="margin-top:14px;">
-          <h2>Geschenke</h2>
+          <h2><span class="subhead">Geschenke</span></h2>
           <p>Eure Anwesenheit ist für uns das schönste Geschenk.</p>
           <p class="muted">Weitere Aufmerksamkeiten sind selbstverständlich freiwillig.</p>
         </section>
@@ -468,7 +431,7 @@
     </div>
 
     <section class="card section" id="location" style="margin-top:14px;">
-      <h2>Location</h2>
+      <h2><span class="subhead">Location</span></h2>
       <div class="two" style="margin-top:12px;">
         <div>
           <p><strong>Art Deco Hotel Montana</strong><br>
@@ -476,25 +439,24 @@
             6002 Luzern</p>
 
           <p class="muted">
-            Die Feier findet vollständig vor Ort statt. Übernachtung: Einen Link für Zimmer mit Rabatt im Hotel Montana stellen wir hier in Kürze bereit.
+            Übernachtung: Einen Link für Zimmer mit Rabatt im Hotel Montana stellen wir hier in Kürze bereit.
           </p>
 
           <div class="cta">
-            <a class="btn accent" href="https://maps.google.com/?q=Art%20Deco%20Hotel%20Montana%20Luzern" target="_blank" rel="noopener">Auf Google öffnen</a>
+            <a class="btn primary" href="https://maps.google.com/?q=Art%20Deco%20Hotel%20Montana%20Luzern" target="_blank" rel="noopener">Auf Google öffnen</a>
           </div>
         </div>
 
         <div>
-          <iframe
-            title="Karte Hotel Montana"
-            src="https://www.google.com/maps?q=Art%20Deco%20Hotel%20Montana%20Luzern&output=embed"
-            loading="lazy"></iframe>
+          <iframe title="Karte Hotel Montana"
+                  src="https://www.google.com/maps?q=Art%20Deco%20Hotel%20Montana%20Luzern&output=embed"
+                  loading="lazy"></iframe>
         </div>
       </div>
     </section>
 
     <section class="card section" id="park" style="margin-top:14px;">
-      <h2>Parkplatz &amp; Gondel</h2>
+      <h2><span class="subhead">Parkplatz &amp; Gondel</span></h2>
       <div class="two" style="margin-top:12px;">
         <div>
           <p><strong>Parkhaus Casino Palace</strong><br>
@@ -508,21 +470,20 @@
           </p>
 
           <div class="cta">
-            <a class="btn accent" href="https://maps.google.com/?q=Parkhaus%20Casino%20Palace%20Luzern" target="_blank" rel="noopener">Auf Google öffnen</a>
+            <a class="btn primary" href="https://maps.google.com/?q=Parkhaus%20Casino%20Palace%20Luzern" target="_blank" rel="noopener">Auf Google öffnen</a>
           </div>
         </div>
 
         <div>
-          <iframe
-            title="Karte Parkhaus Casino Palace"
-            src="https://www.google.com/maps?q=Parkhaus%20Casino%20Palace%20Luzern&output=embed"
-            loading="lazy"></iframe>
+          <iframe title="Karte Parkhaus Casino Palace"
+                  src="https://www.google.com/maps?q=Parkhaus%20Casino%20Palace%20Luzern&output=embed"
+                  loading="lazy"></iframe>
         </div>
       </div>
     </section>
 
     <section class="card section" id="faq" style="margin-top:14px;">
-      <h2>FAQ</h2>
+      <h2><span class="subhead">FAQ</span></h2>
 
       <p><strong>Dürfen Kinder mitkommen?</strong><br>
         Ja, Kinder sind herzlich willkommen.</p>
@@ -545,16 +506,17 @@
     </section>
 
     <section class="card section" id="kontakt" style="margin-top:14px;">
-      <h2>Kontakt</h2>
-      <p class="muted">Fragen, kurzfristige Änderungen oder irgendetwas Unklares, schreibt uns direkt.</p>
+      <h2><span class="subhead">Kontakt</span></h2>
+      <p class="muted">Fragen oder Unklarheiten, schreibt uns direkt.</p>
+
       <div class="kv" style="margin-top:10px;">
-        <div class="k">WhatsApp / SMS</div><div class="v"><a class="accent" href="tel:+41763320726">+41 76 332 07 26</a></div>
-        <div class="k">E-Mail</div><div class="v"><a class="accent" href="mailto:elmarzaidab@gmail.com">elmarzaidab@gmail.com</a></div>
+        <div class="k">WhatsApp / SMS</div><div class="v"><a class="textlink" href="tel:+41763320726">+41 76 332 07 26</a></div>
+        <div class="k">E-Mail</div><div class="v"><a class="textlink" href="mailto:elmarzaidab@gmail.com">elmarzaidab@gmail.com</a></div>
       </div>
     </section>
 
     <footer>
-      © 2026 Aida Beširović &amp; Elmar Žiko. Alle Angaben ohne Gewähr bis final bestätigt.
+      © 2026 Aida Beširović &amp; Elmar Žiko
     </footer>
   </main>
 
