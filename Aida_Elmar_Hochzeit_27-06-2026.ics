@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Aida & Elmar Hochzeit//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:wedding-aida-elmar-20260627@elmarzaidab
+DTSTAMP:20251217T120000Z
+DTSTART:20260627T150000Z
+DTEND:20260628T010000Z
+SUMMARY:Hochzeit Aida Beširović & Elmar Žiko
+LOCATION:Art Deco Hotel Montana, Adligenswilerstrasse 22, 6002 Luzern, Schweiz
+DESCRIPTION:Hochzeit von Aida Beširović und Elmar Žiko.\n\nApéro ab 17.00 Uhr\nDinner ca. 19.00 Uhr\nParty ab 22.00 Uhr\n\nParkieren: Parkhaus Casino Palace.\nAnreise mit Standseilbahn direkt ins Hotel.
+END:VEVENT
+END:VCALENDAR
