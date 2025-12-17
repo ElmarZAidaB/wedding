@@ -6,31 +6,31 @@
   <title>Aida Beširović & Elmar Žiko, Hochzeit 27.06.2026</title>
   <meta name="description" content="Hochzeitswebsite von Aida Beširović und Elmar Žiko. Alle Infos, RSVP und Kontakt." />
 
+  <!-- Fonts (Google Fonts). Wenn du in Canva/Brand Fonts etwas Ähnliches nutzt: Playfair Display + Inter ist ein sicherer, eleganter Mix. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --ink:#0f1412;
-      --muted:rgba(15,20,18,0.72);
-
-      /* Edles Grün */
-      --bg1:#0f231a;
-      --bg2:#123024;
-      --bg3:#0b1d15;
-
-      /* Gold */
-      --gold:#b9954a;
-      --gold2:rgba(185,149,74,0.22);
-
-      /* Cards */
-      --card:rgba(255,255,255,0.92);
+      --bg:#0f1f18;
+      --ink:#111111;
+      --muted:#5a5a5a;
+      --card:#ffffff;
       --line:rgba(0,0,0,0.10);
       --soft:rgba(0,0,0,0.06);
 
-      --max:1000px;
-      --r:22px;
+      /* Akzentfarbe (statt Gold): warmes Kupfer/Rosé, passt edel zu Grün */
+      --gold:#b36a5e;
+      --goldSoft:rgba(179,106,94,0.22);
+
+      --max:980px;
+      --radius:18px;
+      --radius2:22px;
+    }
+      --max:980px;
+      --radius:18px;
+      --radius2:22px;
     }
 
     *{box-sizing:border-box;}
@@ -40,187 +40,249 @@
       font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--ink);
       background:
-        radial-gradient(900px 520px at 18% 10%, rgba(185,149,74,0.14), transparent 62%),
-        radial-gradient(760px 520px at 86% 18%, rgba(255,255,255,0.06), transparent 64%),
-        radial-gradient(680px 520px at 70% 100%, rgba(0,0,0,0.18), transparent 62%),
+        radial-gradient(1200px 700px at 18% 8%, rgba(179,106,94,0.14), transparent 62%),
+        radial-gradient(900px 650px at 88% 18%, rgba(255,255,255,0.05), transparent 64%),
+        radial-gradient(900px 650px at 70% 100%, rgba(179,106,94,0.10), transparent 62%),
         repeating-linear-gradient(45deg, rgba(255,255,255,0.045) 0 1px, transparent 1px 16px),
-        linear-gradient(180deg, var(--bg2), var(--bg1) 45%, var(--bg3));
+        var(--bg);
       line-height:1.5;
     }
 
     a{color:inherit; text-decoration:none;}
     a:hover{text-decoration:underline;}
-    .gold{color:var(--gold);}
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 64px;}
 
     header{
+      padding:18px 0 12px;
+      border-bottom:1px solid rgba(255,255,255,0.10);
       position:sticky;
       top:0;
-      z-index:10;
       backdrop-filter: blur(10px);
-      background:rgba(12,26,19,0.55);
-      border-bottom:1px solid rgba(255,255,255,0.10);
+      background: rgba(15,31,24,0.72);
+      z-index:10;
     }
 
     .nav{
       max-width:var(--max);
       margin:0 auto;
-      padding:14px 18px;
+      padding:0 18px;
       display:flex;
-      justify-content:space-between;
       align-items:center;
-      gap:12px;
+      justify-content:space-between;
+      gap:14px;
     }
 
     .brand{
       font-family:"Playfair Display", serif;
-      letter-spacing:0.10em;
+      font-weight:600;
+      letter-spacing:0.08em;
       text-transform:uppercase;
       font-size:12px;
-      color:rgba(255,255,255,0.78);
+      color:rgba(255,255,255,0.80);
       white-space:nowrap;
     }
 
-    .links{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;}
-    .links a{
-      font-size:13px;
-      color:rgba(255,255,255,0.78);
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid transparent;
-    }
-    .links a:hover{
-      text-decoration:none;
-      border-color:rgba(255,255,255,0.16);
-      background:rgba(255,255,255,0.06);
-    }
+    .links{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;}
+    .links a{font-size:13px; color:rgba(255,255,255,0.78); padding:7px 10px; border-radius:999px; border:1px solid transparent;}
+    .links a:hover{background:rgba(255,255,255,0.10); border-color:rgba(255,255,255,0.16); text-decoration:none; color:#fff;}
 
-    .wrap{max-width:var(--max); margin:0 auto; padding:26px 18px 70px;}
+    .hero{padding:36px 0 10px;}
 
-    .hero{
-      margin-top:10px;
-      border-radius:calc(var(--r) + 10px);
-      padding:34px 18px 22px;
-      background:linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.88));
-      border:1px solid rgba(255,255,255,0.55);
-      box-shadow:0 22px 70px rgba(0,0,0,0.25);
+    .heroCard{
+      text-align:center;
+      background: rgba(255,255,255,0.92);
+      border:1px solid var(--line);
+      border-radius: calc(var(--radius2) + 8px);
+      box-shadow:0 18px 50px rgba(0,0,0,0.05);
+      padding:34px 16px 18px;
       position:relative;
       overflow:hidden;
-      text-align:center;
     }
 
-    .hero:before{
+    .heroCard:before{
       content:"";
       position:absolute;
       inset:-2px;
       background:
-        radial-gradient(520px 260px at 50% 0%, rgba(185,149,74,0.20), transparent 60%),
-        radial-gradient(520px 260px at 0% 40%, rgba(0,0,0,0.06), transparent 62%);
+        radial-gradient(420px 220px at 10% 0%, rgba(0,0,0,0.045), transparent 64%),
+        radial-gradient(380px 220px at 100% 40%, rgba(0,0,0,0.035), transparent 65%);
       pointer-events:none;
     }
-    .hero > *{position:relative; z-index:1;}
 
-    .kicker{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      justify-content:center;
-      letter-spacing:0.18em;
-      text-transform:uppercase;
-      font-size:12px;
-      color:rgba(15,20,18,0.72);
+    .monogram{
+      width:54px; height:54px;
+      margin:0 auto 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,0.92);
+      position:relative;
+      z-index:1;
     }
 
-    .kicker .dot{
-      width:4px; height:4px; border-radius:999px;
-      background:var(--gold);
-      opacity:0.9;
+    .monogram span{
+      font-family:"Playfair Display", serif;
+      font-weight:600;
+      letter-spacing:0.06em;
+      color:var(--ink);
+      font-size:18px;
+      text-transform:uppercase;
     }
 
     .names{
-      margin:12px 0 0;
       font-family:"Playfair Display", serif;
       font-weight:600;
-      letter-spacing:0.08em;
+      letter-spacing:0.06em;
       text-transform:uppercase;
-      font-size:clamp(30px, 4.7vw, 58px);
-      line-height:1.12;
+      font-size: clamp(24px, 3.6vw, 44px);
+      margin:0;
+      position:relative;
+      z-index:1;
+    }
+      margin:0;
+      position:relative;
+      z-index:1;
+    }
+
+    .kicker{
+      margin:0 auto 12px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid var(--goldSoft);
+      background:rgba(179,106,94,0.10);
+      font-size:12px;
+      letter-spacing:0.22em;
+      text-transform:uppercase;
+      color:var(--gold);
+      position:relative;
+      z-index:1;
+    }
+
+    .kicker svg{width:16px; height:16px; opacity:0.9; flex:0 0 auto;}
+    .kicker span{letter-spacing:0.22em;}
+
+    .dateLine{
+      margin:10px 0 0;
+      font-size:15px;
+      color:var(--muted);
+      position:relative;
+      z-index:1;
+    }
+
+    .dateLine strong{color:var(--gold); font-weight:600;}
+
+    .nameLine{
+      display:inline-flex;
+      align-items:baseline;
+      gap:14px;
+      white-space:nowrap;
+    }
+    .nowrap{white-space:nowrap;}
+
+    /* Kleine Screens: weiterhin 1 Zeile, aber kompakter */
+    @media (max-width: 520px){
+      .names{font-size:22px; letter-spacing:0.05em;}
+      .nameLine{gap:10px;}
+      .amp{margin:0 6px;}
+    }
+    @media (max-width: 380px){
+      .names{font-size:20px; letter-spacing:0.04em;}
+    }
+      .amp{display:block; margin:6px 0; opacity:0.95;}
+    }
+
+    .amp{display:inline-block; margin:0 10px; font-weight:500; opacity:0.95;}
+
+    .flourish{
       display:flex;
-      flex-wrap:wrap;
+      align-items:center;
       justify-content:center;
-      gap:14px 18px;
+      gap:10px;
+      margin:14px auto 6px;
+      position:relative;
+      z-index:1;
+      color:rgba(0,0,0,0.52);
     }
 
-    .names span{white-space:nowrap;}
-    .amp{opacity:0.95;}
+    .flourish .line{height:1px; width:90px; background:rgba(0,0,0,0.14);}
+    .flourish svg{width:16px; height:16px; opacity:0.8;}
 
-    .date{
-      margin:12px 0 0;
-      font-size:16px;
-      color:rgba(15,20,18,0.78);
-    }
+    .meta{margin:10px 0 0; font-size:15px; color:var(--muted); position:relative; z-index:1;}
 
-    .date strong{
-      color:var(--ink);
-      border-bottom:1px solid var(--gold2);
-      padding-bottom:2px;
-    }
-
-    .divider{
-      margin:18px auto 10px;
-      width:190px;
-      height:1px;
-      background:linear-gradient(to right, transparent, rgba(185,149,74,0.70), transparent);
-    }
-
-    .countdownWrap{
-      margin-top:14px;
-    }
-
-    .countLabel{
-      margin:0 0 8px;
+    .pillrow{margin-top:16px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; position:relative; z-index:1;}
+    .pill{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.75);
+      padding:10px 14px;
+      border-radius:999px;
       font-size:13px;
-      color:rgba(15,20,18,0.62);
+      color:var(--muted);
     }
 
-    .countdown{display:flex; gap:10px; justify-content:center; flex-wrap:wrap;}
-    .cd{
-      min-width:88px;
-      border:1px solid rgba(0,0,0,0.10);
-      border-radius:16px;
-      background:rgba(255,255,255,0.82);
-      padding:10px 12px;
+    .photo{
+      margin:18px auto 0;
+      max-width:740px;
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(0,0,0,0.06), transparent 35%),
+        radial-gradient(520px 260px at 20% 20%, rgba(0,0,0,0.06), transparent 60%),
+        rgba(255,255,255,0.65);
+      overflow:hidden;
+      position:relative;
+      z-index:1;
+    }
+
+    .photoInner{
+      aspect-ratio: 16/6;
+      min-height:180px;
+      display:grid;
+      place-items:center;
+      padding:14px;
+      color:rgba(0,0,0,0.55);
+      font-size:13px;
+      letter-spacing:0.02em;
       text-align:center;
     }
-    .cd .n{font-size:18px; font-weight:600;}
-    .cd .l{font-size:11px; color:rgba(15,20,18,0.62); letter-spacing:0.08em; text-transform:uppercase;}
 
     .grid{display:grid; grid-template-columns:1fr; gap:14px; margin-top:16px;}
-    @media (min-width: 900px){
-      .grid{grid-template-columns:1.12fr 0.88fr;}
+    @media (min-width: 860px){
+      .grid{grid-template-columns:1.1fr 0.9fr;}
     }
 
     .card{
-      background:var(--card);
-      border:1px solid rgba(255,255,255,0.60);
-      border-radius:var(--r);
+      background:rgba(255,255,255,0.9);
+      border:1px solid var(--line);
+      border-radius:var(--radius2);
       padding:20px 18px;
-      box-shadow:0 18px 50px rgba(0,0,0,0.18);
+      box-shadow:0 14px 40px rgba(0,0,0,0.05);
     }
 
     h2{
       font-family:"Playfair Display", serif;
-      margin:0 0 10px;
+      margin:0;
       font-size:22px;
       letter-spacing:0.02em;
       color:var(--gold);
     }
 
-    p{margin:0 0 10px;}
+    p{margin:0 0 10px; color:var(--ink);}
     .muted{color:var(--muted);}
 
-    .kv{display:grid; grid-template-columns:120px 1fr; gap:10px 14px; margin-top:10px;}
-    .k{color:rgba(15,20,18,0.62); font-size:13px;}
+    .kv{display:grid; grid-template-columns:110px 1fr; gap:10px 14px; margin-top:10px;}
+    .k{color:var(--muted); font-size:13px;}
     .v{font-size:14px;}
+
+    .divider{
+      height:1px;
+      background:linear-gradient(to right, transparent, rgba(0,0,0,0.14), transparent);
+      margin:14px 0;
+    }
 
     .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;}
 
@@ -231,74 +293,59 @@
       gap:10px;
       border-radius:14px;
       padding:12px 14px;
-      border:1px solid rgba(0,0,0,0.10);
-      background:#111;
+      border:1px solid var(--line);
+      background:var(--gold);
       color:#fff;
       font-weight:500;
       font-size:14px;
       min-width:170px;
       cursor:pointer;
-      box-shadow:0 12px 30px rgba(0,0,0,0.12);
+      box-shadow:0 12px 30px rgba(0,0,0,0.10);
       transition: transform 180ms ease, filter 180ms ease;
     }
+
+    .btn.secondary{background:rgba(255,255,255,0.95); color:var(--ink); border-color:var(--goldSoft); box-shadow:none;}
     .btn:hover{filter:brightness(1.03); text-decoration:none; transform: translateY(-1px);}
 
-    .btn.gold{
-      background:linear-gradient(180deg, #c6a058, #b9954a);
-      border-color:rgba(185,149,74,0.55);
-      color:#101010;
-      box-shadow:0 14px 34px rgba(185,149,74,0.20);
-    }
+    .small{font-size:13px; color:var(--muted);}
+    .section{scroll-margin-top:110px;}
 
-    .btn.secondary{
-      background:rgba(255,255,255,0.92);
-      color:var(--ink);
-      border-color:rgba(185,149,74,0.22);
-      box-shadow:none;
-    }
-
-    .divider2{
-      height:1px;
-      background:linear-gradient(to right, transparent, rgba(185,149,74,0.35), transparent);
-      margin:14px 0;
-    }
-
-    .two{display:grid; grid-template-columns:1fr; gap:14px; align-items:start;}
-    @media (min-width: 900px){
-      .two{grid-template-columns:1fr 1fr;}
-    }
-
-    iframe{
-      width:100%;
-      height:280px;
-      border:0;
+    .countdown{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:14px; position:relative; z-index:1;}
+    .cd{
+      min-width:86px;
+      border:1px solid var(--line);
       border-radius:16px;
-      box-shadow:0 14px 34px rgba(0,0,0,0.12);
+      background:rgba(255,255,255,0.78);
+      padding:10px 12px;
+      text-align:center;
     }
+    .cd .n{font-size:18px; font-weight:600;}
+    .cd .l{font-size:11px; color:var(--muted); letter-spacing:0.06em; text-transform:uppercase;}
+
+    .faq p{margin-bottom:12px;}
 
     footer{
       margin-top:18px;
       padding-top:18px;
-      border-top:1px solid rgba(255,255,255,0.14);
+      border-top:1px solid var(--line);
       text-align:center;
-      color:rgba(255,255,255,0.70);
+      color:var(--muted);
       font-size:12px;
     }
 
-    .section{scroll-margin-top:110px;}
-
     @media (prefers-reduced-motion: no-preference){
-      .hero, .card{animation: fadeUp 420ms ease both;}
+      .heroCard, .card{animation: fadeUp 420ms ease both;}
       .card{animation-delay: 40ms;}
       @keyframes fadeUp{from{opacity:0; transform: translateY(10px);} to{opacity:1; transform: translateY(0);} }
     }
 
+    /* Druckfreundlich */
     @media print{
       header{position:static; backdrop-filter:none;}
       .btn, .links{display:none !important;}
       body{background:#fff;}
-      .hero, .card{box-shadow:none;}
-      footer{color:#666; border-color:#ddd;}
+      .card{box-shadow:none;}
+      .heroCard{box-shadow:none;}
     }
   </style>
 </head>
@@ -310,7 +357,6 @@
       <nav class="links" aria-label="Navigation">
         <a href="#details">Details</a>
         <a href="#rsvp">Rückmeldung</a>
-        <a href="#location">Location</a>
         <a href="#faq">FAQ</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
@@ -319,31 +365,94 @@
 
   <main class="wrap">
     <section class="hero" id="top">
-      <div class="kicker">
-        <span class="dot" aria-hidden="true"></span>
-        <span>Hochzeit</span>
-        <span class="dot" aria-hidden="true"></span>
-      </div>
+      <div class="heroCard">
+        <div class="monogram" aria-hidden="true"><span>A&E</span></div>
+        <p class="kicker" aria-label="Hochzeit">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8.2 10.5c.7-1.2 2-2 3.8-2s3.1.8 3.8 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M6 11.5c0-2.8 2.7-5 6-5s6 2.2 6 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M7.2 11.5h9.6v6.2c0 .8-.6 1.3-1.3 1.3H8.5c-.7 0-1.3-.5-1.3-1.3v-6.2Z" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M10.2 4.8 12 3l1.8 1.8L12 6.6 10.2 4.8Z" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+          <span>Wir heiraten</span>
+        </p>
+        <h1 class="names">
+          <span class="nameLine">
+            <span class="nowrap">AIDA BEŠIROVIĆ</span>
+            <span class="amp">&</span>
+            <span class="nowrap">ELMAR ŽIKO</span>
+          </span>
+        </h1>
+        <p class="dateLine"><strong>27.06.2026</strong> · Luzern</p>
+        <p class="meta" style="margin-top:6px;"><span class="gold" style="font-weight:600;">Hochzeitsparty</span> im Art Deco Hotel Montana</p>
 
-      <h1 class="names" aria-label="Namen">
-        <span>AIDA BEŠIROVIĆ</span>
-        <span class="amp">&</span>
-        <span>ELMAR ŽIKO</span>
-      </h1>
+        <div class="flourish" aria-hidden="true">
+          <span class="line"></span>
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 20c4.6-2.7 8-6.4 8-10.3C20 6.6 17.8 4.5 15.2 4.5c-1.6 0-2.8.8-3.2 2.1c-.4-1.3-1.6-2.1-3.2-2.1C6.2 4.5 4 6.6 4 9.7C4 13.6 7.4 17.3 12 20Z" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+          <span class="line"></span>
+        </div>
 
-      <div class="divider" aria-hidden="true"></div>
+        <p class="meta">Samstag, 27. Juni 2026</p>
 
-      <p class="date">
-        <strong>Samstag, 27.06.2026</strong>, Luzern
-      </p>
-
-      <div class="countdownWrap" aria-label="Countdown bis zur Hochzeit">
-        <p class="countLabel">Bis zum grossen Tag dauert es noch</p>
-        <div class="countdown">
+        <div class="countdown" aria-label="Countdown bis zur Hochzeit">
+          <p class="muted" style="width:100%; text-align:center; margin-bottom:6px;">Bis zum grossen Tag dauert es noch</p>
           <div class="cd"><div class="n" id="cdD">--</div><div class="l">Tage</div></div>
           <div class="cd"><div class="n" id="cdH">--</div><div class="l">Std</div></div>
           <div class="cd"><div class="n" id="cdM">--</div><div class="l">Min</div></div>
           <div class="cd"><div class="n" id="cdS">--</div><div class="l">Sek</div></div>
+        </div>
+
+        <div class="pillrow" aria-label="Kurzinformationen">
+          <div class="pill"><span style="color:var(--gold); font-weight:600;">Dresscode:</span> Formal</div>
+          <div class="pill">RSVP bis 30.04.2026</div>
+          <div class="pill">Keine Schweineprodukte, kein Fisch</div>
+        </div>
+
+        <div class="photo" aria-label="Beispielbild">
+          <img
+            alt="Beispielbild, Platzhalter"
+            style="display:block; width:100%; height:auto;"
+            src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='600' viewBox='0 0 1600 600'>
+  <defs>
+    <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
+      <stop offset='0' stop-color='%23f7f2ea'/>
+      <stop offset='1' stop-color='%23ffffff'/>
+    </linearGradient>
+    <radialGradient id='r' cx='25%' cy='25%' r='70%'>
+      <stop offset='0' stop-color='%23000000' stop-opacity='0.08'/>
+      <stop offset='1' stop-color='%23000000' stop-opacity='0'/>
+    </radialGradient>
+    <filter id='s' x='-10%' y='-10%' width='120%' height='120%'>
+      <feDropShadow dx='0' dy='10' stdDeviation='18' flood-color='%23000000' flood-opacity='0.10'/>
+    </filter>
+  </defs>
+
+  <rect width='1600' height='600' fill='url(%23g)'/>
+  <rect width='1600' height='600' fill='url(%23r)'/>
+
+  <!-- "Foto"-Rahmen -->
+  <g filter='url(%23s)'>
+    <rect x='140' y='80' rx='28' ry='28' width='1320' height='440' fill='%23ffffff' fill-opacity='0.75' stroke='%23000000' stroke-opacity='0.12'/>
+  </g>
+
+  <!-- dezente Illustration (nicht kitschig) -->
+  <path d='M420 360c70-120 210-190 380-190s310 70 380 190' fill='none' stroke='%23000000' stroke-opacity='0.16' stroke-width='3'/>
+  <path d='M520 380c50-80 150-130 280-130s230 50 280 130' fill='none' stroke='%23000000' stroke-opacity='0.14' stroke-width='2'/>
+
+  <!-- Initialen -->
+  <text x='800' y='310' text-anchor='middle' font-family='Playfair Display, serif' font-size='78' letter-spacing='6' fill='%23111111'>A  &amp;  E</text>
+  <text x='800' y='360' text-anchor='middle' font-family='Inter, Arial, sans-serif' font-size='18' letter-spacing='2' fill='%235a5a5a'>Beispielbild, hier könnt ihr euer Foto einsetzen</text>
+
+  <!-- kleine Herzlinie -->
+  <g opacity='0.55'>
+    <line x1='660' y1='405' x2='740' y2='405' stroke='%23000000' stroke-opacity='0.18'/>
+    <path d='M800 415c18-10 31-25 31-40c0-12-8-20-18-20c-7 0-12 4-13 9c-2-6-7-9-13-9c-10 0-18 8-18 20c0 15 13 30 31 40Z' fill='none' stroke='%23000000' stroke-opacity='0.22' stroke-width='1.4'/>
+    <line x1='860' y1='405' x2='940' y2='405' stroke='%23000000' stroke-opacity='0.18'/>
+  </g>
+</svg>" />
         </div>
       </div>
     </section>
@@ -354,19 +463,17 @@
         <p>Gemeinsam mit unseren Familien laden wir euch ein, unsere Hochzeit zu feiern.</p>
         <p class="muted">Alle Infos sind hier gesammelt, damit es für alle einfach ist.</p>
 
-        <div class="divider2" aria-hidden="true"></div>
-
+        <div class="divider" aria-hidden="true"></div>
         <h2>Details</h2>
         <div class="kv" aria-label="Details">
-          <div class="k">Datum</div><div class="v"><strong>Samstag, 27.06.2026</strong></div>
+          <div class="k">Datum</div><div class="v">Samstag, 27.06.2026</div>
           <div class="k">Ort</div><div class="v">Art Deco Hotel Montana, Adligenswilerstrasse 22, 6002 Luzern</div>
-          <div class="k">Start</div><div class="v">Apéro ab ca. 17.00 Uhr</div>
+          <div class="k">Apéro</div><div class="v">ca. 17.00 Uhr</div>
           <div class="k">Dinner</div><div class="v">ca. 19.00 Uhr</div>
-          <div class="k">Party</div><div class="v">ab ca. 22.00 Uhr</div>
+          <div class="k">Party</div><div class="v">ca. 22.00 Uhr</div>
         </div>
 
-        <div class="divider2" aria-hidden="true"></div>
-
+        <div class="divider" aria-hidden="true"></div>
         <h2>Zeitplan</h2>
         <div class="kv" aria-label="Zeitplan">
           <div class="k">17.00</div><div class="v">Apéro</div>
@@ -376,9 +483,11 @@
         </div>
 
         <div class="cta">
-          <a class="btn gold" href="https://maps.google.com/?q=Art%20Deco%20Hotel%20Montana%20Luzern" target="_blank" rel="noopener">Route öffnen</a>
+          <a class="btn" href="https://maps.google.com/?q=Art%20Deco%20Hotel%20Montana%20Luzern" target="_blank" rel="noopener">Route öffnen</a>
           <a class="btn secondary" href="#rsvp">Jetzt zurückmelden</a>
         </div>
+
+        <p class="small" style="margin-top:12px;">Hinweis: Zeiten sind Platzhalter. Sobald fix, einfach ersetzen.</p>
       </section>
 
       <aside>
@@ -388,13 +497,14 @@
           <p class="muted">Begleitpersonen sind in den Einladungen namentlich erwähnt.</p>
 
           <div class="cta">
-            <a class="btn gold" href="[RSVP-LINK-HIER-EINFÜGEN]" target="_blank" rel="noopener">RSVP ausfüllen</a>
+            <!-- Option A: Link zu einem Formular (Google Forms, Typeform, WithJoy, Zola) -->
+            <a class="btn" href="[RSVP-LINK-HIER-EINFÜGEN]" target="_blank" rel="noopener">RSVP ausfüllen</a>
+
+            <!-- Option B: Mailto als Backup -->
             <a class="btn secondary" href="mailto:elmarzaidab@gmail.com?subject=RSVP%2027.06.2026&body=Name:%0D%0AAnzahl%20Personen:%0D%0AZu%20oder%20Absage:%0D%0AAllergien:%0D%0A">Per E-Mail antworten</a>
           </div>
 
-          <p class="muted" style="margin-top:12px; font-size:13px;">
-            Tipp: Ein Formular ist am saubersten, dann ist alles direkt in einer Liste.
-          </p>
+          <p class="small" style="margin-top:12px;">Tipp: Nimm ein Formular, dann hast du alles sauber in einer Liste.</p>
         </section>
 
         <section class="card" style="margin-top:14px;">
@@ -405,35 +515,26 @@
       </aside>
     </div>
 
-    <section class="card section" id="location" style="margin-top:14px;">
+    <section class="card section faq" id="faq" style="margin-top:14px;">
       <h2>Location</h2>
-      <div class="two" style="margin-top:12px;">
+      <div class="grid" style="margin-top:12px; grid-template-columns:1fr 1fr;">
         <div>
           <p><strong>Art Deco Hotel Montana</strong><br>
-            Adligenswilerstrasse 22<br>
-            6002 Luzern</p>
+          Adligenswilerstrasse 22<br>
+          6002 Luzern</p>
 
-          <p class="muted">
-            Übernachtung: Einen Link für Zimmer mit Rabatt im Hotel Montana stellen wir hier in Kürze bereit.
-          </p>
-
-          <a class="btn secondary" href="https://maps.google.com/?q=Art%20Deco%20Hotel%20Montana%20Luzern" target="_blank" rel="noopener">
-            In Google Maps öffnen
-          </a>
+          <p class="muted">Die Feier findet vollständig vor Ort statt. Übernachtung: Einen Link für Zimmer mit Rabatt im Hotel Montana stellen wir hier in Kürze bereit.</p>
         </div>
-
         <div>
           <iframe
-            title="Karte Hotel Montana"
+            title="Karte Luzern"
             src="https://www.google.com/maps?q=Art%20Deco%20Hotel%20Montana%20Luzern&output=embed"
-            loading="lazy"></iframe>
+            width="100%" height="260" style="border:0; border-radius:16px;" loading="lazy"></iframe>
         </div>
       </div>
-    </section>
 
-    <section class="card section" id="faq" style="margin-top:14px;">
+      <div class="divider" aria-hidden="true"></div>
       <h2>FAQ</h2>
-
       <p><strong>Dürfen Kinder mitkommen?</strong><br>
         Ja, Kinder sind herzlich willkommen.</p>
 
@@ -443,23 +544,28 @@
       <p><strong>Essen, Allergien, Wünsche?</strong><br>
         Bitte direkt im RSVP angeben. Wir berücksichtigen das so gut wie möglich.</p>
 
-      <p><strong>Dresscode?</strong><br>
-        <strong>Formal</strong><br>
-        Frauen in Abendkleidern und Männer in Anzug oder Hemd.</p>
-
       <p><strong>Anreise und Parkieren?</strong><br>
-        Die Location erreicht ihr am besten mit dem Auto. Parkieren Sie bitte im Parkhaus Casino Palace. Nach dem Überqueren der Strasse bringt dich die hoteleigene Standseilbahn direkt in die Lobby.</p>
+        Die Location erreicht ihr am besten mit dem Auto. Parkiert bitte im Parkhaus Casino Palace. Nach dem Überqueren der Strasse bringt euch die hoteleigene Standseilbahn direkt in die Lobby.</p>
+
+      <p><strong>Dresscode?</strong><br>
+        Formal. Frauen in Abendkleidern und Männer in Anzug oder Hemd.</p>
 
       <p><strong>Übernachtung?</strong><br>
         Wer im Hotel Montana oder in der Nähe übernachten möchte, bucht am besten früh. Einen Link für Zimmer mit Rabatt im Hotel Montana stellen wir hier in Kürze bereit.</p>
+
+      <p><strong>Reden oder Überraschungen?</strong><br>
+        Sehr gerne, bitte meldet euch kurz bei uns, damit es in den Ablauf passt.</p>
+
+      <p><strong>Fotos?</strong><br>
+        Sehr gerne. Wenn ihr Bilder macht, freuen wir uns, wenn ihr sie später mit uns teilt.</p>
     </section>
 
     <section class="card section" id="kontakt" style="margin-top:14px;">
       <h2>Kontakt</h2>
-      <p class="muted">Fragen, kurzfristige Änderungen oder irgendetwas Unklares, schreibt uns direkt.</p>
+      <p>Fragen, kurzfristige Änderungen oder irgendetwas Unklares, schreibt uns direkt.</p>
       <div class="kv" style="margin-top:10px;">
-        <div class="k">WhatsApp / SMS</div><div class="v"><a class="gold" href="tel:+41763320726">+41 76 332 07 26</a></div>
-        <div class="k">E-Mail</div><div class="v"><a class="gold" href="mailto:elmarzaidab@gmail.com">elmarzaidab@gmail.com</a></div>
+        <div class="k">WhatsApp / SMS</div><div class="v"><a href="tel:+41763320726">+41 76 332 07 26</a></div>
+        <div class="k">E-Mail</div><div class="v">elmarzaidab@gmail.com</div>
       </div>
     </section>
 
@@ -467,13 +573,13 @@
       © 2026 Aida Beširović & Elmar Žiko. Alle Angaben ohne Gewähr bis final bestätigt.
     </footer>
   </main>
-
   <script>
     (function(){
-      // Start: 27.06.2026 17:00 (Apéro)
+      // Hochzeit: 27.06.2026 17:00 Lokalzeit (Start Apéro). Uhrzeit hier anpassen, falls nötig.
       const target = new Date('2026-06-27T17:00:00');
-
-      function pad(n){ return String(n).padStart(2,'0'); }
+      const elD = document.getElementById('cdD');
+      const elH = document.getElementById('cdH');
+      const elM = document.getElementById('cdM');
 
       function tick(){
         const now = new Date();
@@ -487,10 +593,10 @@
         const mins = Math.floor((totalSec % 3600) / 60);
         const secs = totalSec % 60;
 
-        document.getElementById('cdD').textContent = pad(days);
-        document.getElementById('cdH').textContent = pad(hours);
-        document.getElementById('cdM').textContent = pad(mins);
-        document.getElementById('cdS').textContent = pad(secs);
+        document.getElementById('cdD').textContent = String(days).padStart(2,'0');
+        document.getElementById('cdH').textContent = String(hours).padStart(2,'0');
+        document.getElementById('cdM').textContent = String(mins).padStart(2,'0');
+        document.getElementById('cdS').textContent = String(secs).padStart(2,'0');
       }
 
       tick();
