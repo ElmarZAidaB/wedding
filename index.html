@@ -322,9 +322,6 @@
           <div class="cd"><div class="n" id="cdH">--</div><div class="l">Std</div></div>
           <div class="cd"><div class="n" id="cdM">--</div><div class="l">Min</div></div>
           <div class="cd"><div class="n" id="cdS">--</div><div class="l">Sek</div></div>
-        </div><div class="l">Tage</div></div>
-          <div class="cd"><div class="n" id="cdH">--</div><div class="l">Stunden</div></div>
-          <div class="cd"><div class="n" id="cdM">--</div><div class="l">Minuten</div></div>
         </div>
 
         <div class="pillrow" aria-label="Kurzinformationen">
@@ -383,13 +380,18 @@
     <div class="grid">
       <section class="card section" id="details">
         <h2>Einladung</h2>
-        <h2>Einladung</h2>
         <p>Gemeinsam mit unseren Familien laden wir euch ein, unsere Hochzeit zu feiern.</p>
         <p class="muted">Alle Infos sind hier gesammelt, damit es für alle einfach ist.</p>
 
         <div class="divider" aria-hidden="true"></div>
         <h2>Details</h2>
-        <div class="kv">$1</div>
+        <div class="kv" aria-label="Details">
+          <div class="k">Datum</div><div class="v">Samstag, 27.06.2026</div>
+          <div class="k">Ort</div><div class="v">Art Deco Hotel Montana, Adligenswilerstrasse 22, 6002 Luzern</div>
+          <div class="k">Apéro</div><div class="v">ca. 17.00 Uhr</div>
+          <div class="k">Dinner</div><div class="v">ca. 19.00 Uhr</div>
+          <div class="k">Party</div><div class="v">ca. 22.00 Uhr</div>
+        </div>
 
         <div class="divider" aria-hidden="true"></div>
         <h2>Zeitplan</h2>
@@ -410,7 +412,6 @@
 
       <aside>
         <section class="card section" id="rsvp">
-          <h2>Rückmeldung</h2>
           <h2>Rückmeldung</h2>
           <p>Bitte Zu oder Absage bis <strong>30.04.2026</strong>.</p>
           <p class="muted">Begleitpersonen sind in den Einladungen namentlich erwähnt.</p>
@@ -442,7 +443,7 @@
           Adligenswilerstrasse 22<br>
           6002 Luzern</p>
 
-          <p class="muted">Die Feier findet vollständig vor Ort statt.</p>
+          <p class="muted">Die Feier findet vollständig vor Ort statt. Übernachtung: Ein Rabatt-Link für das Hotel Montana folgt hier in Kürze.</p>
         </div>
         <div>
           <iframe
@@ -464,15 +465,14 @@
         Bitte direkt im RSVP angeben. Wir berücksichtigen das so gut wie möglich.</p>
 
       <p><strong>Übernachtung?</strong><br>
-        Wer im Hotel Montana oder in der Nähe übernachten möchte, bucht am besten früh. [Optional: Kontingent-Info einfügen]</p>
+        Wer im Hotel Montana oder in der Nähe übernachten möchte, bucht am besten früh. Einen Link für Zimmer mit Rabatt im Hotel Montana stellen wir hier in Kürze bereit.</p>
     </section>
 
     <section class="card section" id="kontakt" style="margin-top:14px;">
       <h2>Kontakt</h2>
-      <h2>Kontakt</h2>
       <p>Fragen, kurzfristige Änderungen oder irgendetwas Unklares, schreibt uns direkt.</p>
       <div class="kv" style="margin-top:10px;">
-        <div class="k">WhatsApp</div><div class="v">[Nummer einfügen]</div>
+        <div class="k">WhatsApp / SMS</div><div class="v"><a href="tel:+41763320726">+41 76 332 07 26</a></div>
         <div class="k">E-Mail</div><div class="v">elmarzaidab@gmail.com</div>
       </div>
     </section>
@@ -483,7 +483,7 @@
   </main>
   <script>
     (function(){
-      // Hochzeit: 27.06.2026 16:00 Lokalzeit (Platzhalter). Uhrzeit hier anpassen, sobald fix.
+      // Hochzeit: 27.06.2026 17:00 Lokalzeit (Start Apéro). Uhrzeit hier anpassen, falls nötig.
       const target = new Date('2026-06-27T17:00:00');
       const elD = document.getElementById('cdD');
       const elH = document.getElementById('cdH');
@@ -508,7 +508,7 @@
       }
 
       tick();
-      setInterval(tick, 30000);
+      setInterval(tick, 1000);
     })();
   </script>
 </body>
