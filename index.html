@@ -1,4 +1,4 @@
-https://elmarzaidab.github.io/wedding/<!doctype html>
+<!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8" />
@@ -12,20 +12,22 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
 
   <style>
     :root{
-      --ink:#0f1412;
-      --muted:rgba(15,20,18,0.72);
+      /* Typo */
+      --ink:#2b2f2b;
+      --muted:#6f766f;
 
-      /* Edles Grün */
-      --bg1:#0f231a;
-      --bg2:#123024;
-      --bg3:#0b1d15;
+      /* Salbei Hintergrund */
+      --bg-main:#e9efe9;
+      --bg-soft:#f6f9f6;
+      --bg-accent:#d6dfd6;
 
-      /* Akzent (Kupfer/Rosé) */
-      --accent:#b36a5e;
-      --accent2:rgba(179,106,94,0.22);
+      /* Champagner Akzent (edler als Gold/Kupfer) */
+      --accent:#b7a36b;
+      --accent-soft:rgba(183,163,107,0.22);
 
-      --card:rgba(255,255,255,0.92);
-      --line:rgba(0,0,0,0.10);
+      /* Cards */
+      --card:#ffffff;
+      --line:rgba(0,0,0,0.08);
 
       --max:1000px;
       --r:22px;
@@ -38,25 +40,24 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
       font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--ink);
       background:
-        radial-gradient(900px 520px at 18% 10%, rgba(179,106,94,0.14), transparent 62%),
-        radial-gradient(760px 520px at 86% 18%, rgba(255,255,255,0.06), transparent 64%),
-        radial-gradient(680px 520px at 70% 100%, rgba(0,0,0,0.18), transparent 62%),
-        repeating-linear-gradient(45deg, rgba(255,255,255,0.045) 0 1px, transparent 1px 16px),
-        linear-gradient(180deg, var(--bg2), var(--bg1) 45%, var(--bg3));
-      line-height:1.5;
+        radial-gradient(700px 350px at 15% 10%, rgba(183,163,107,0.12), transparent 60%),
+        radial-gradient(600px 350px at 85% 90%, rgba(0,0,0,0.05), transparent 60%),
+        linear-gradient(180deg, var(--bg-soft), var(--bg-main));
+      line-height:1.55;
     }
 
     a{color:inherit; text-decoration:none;}
     a:hover{text-decoration:underline;}
     .accent{color:var(--accent);}
 
+    /* Header */
     header{
       position:sticky;
       top:0;
       z-index:10;
-      backdrop-filter: blur(10px);
-      background:rgba(12,26,19,0.55);
-      border-bottom:1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(8px);
+      background:rgba(246,249,246,0.86);
+      border-bottom:1px solid var(--line);
     }
 
     .nav{
@@ -71,14 +72,14 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
 
     .brand{
       font-family:"Playfair Display", serif;
-      letter-spacing:0.10em;
+      letter-spacing:0.12em;
       text-transform:uppercase;
       font-size:12px;
-      color:rgba(255,255,255,0.78);
+      color:var(--muted);
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
-      max-width:58vw;
+      max-width:60vw;
     }
 
     .links{
@@ -90,7 +91,7 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
     }
     .links a{
       font-size:13px;
-      color:rgba(255,255,255,0.78);
+      color:var(--muted);
       padding:7px 10px;
       border-radius:999px;
       border:1px solid transparent;
@@ -98,8 +99,9 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
     }
     .links a:hover{
       text-decoration:none;
-      border-color:rgba(255,255,255,0.16);
-      background:rgba(255,255,255,0.06);
+      border-color:rgba(183,163,107,0.28);
+      background:rgba(183,163,107,0.10);
+      color:var(--ink);
     }
 
     /* Mobile menu */
@@ -108,11 +110,11 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
       list-style:none;
       cursor:pointer;
       font-size:13px;
-      color:rgba(255,255,255,0.85);
+      color:var(--ink);
       padding:8px 12px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,0.16);
-      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(0,0,0,0.10);
+      background:rgba(255,255,255,0.9);
       user-select:none;
       white-space:nowrap;
     }
@@ -121,23 +123,23 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
       position:absolute;
       right:18px;
       top:56px;
-      background:rgba(12,26,19,0.92);
-      border:1px solid rgba(255,255,255,0.14);
+      background:rgba(255,255,255,0.98);
+      border:1px solid rgba(0,0,0,0.10);
       border-radius:16px;
       padding:10px;
-      min-width:220px;
-      box-shadow:0 18px 50px rgba(0,0,0,0.35);
+      min-width:240px;
+      box-shadow:0 18px 50px rgba(0,0,0,0.18);
     }
     .menuPanel a{
       display:block;
       padding:10px 10px;
       border-radius:12px;
-      color:rgba(255,255,255,0.88);
+      color:var(--ink);
       font-size:14px;
     }
     .menuPanel a:hover{
       text-decoration:none;
-      background:rgba(255,255,255,0.08);
+      background:rgba(183,163,107,0.10);
     }
 
     @media (max-width: 760px){
@@ -146,15 +148,16 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
       .brand{max-width:64vw;}
     }
 
-    .wrap{max-width:var(--max); margin:0 auto; padding:26px 18px 70px;}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
 
+    /* Hero */
     .hero{
-      margin-top:10px;
+      margin-top:16px;
       border-radius:calc(var(--r) + 10px);
-      padding:34px 18px 26px;
-      background:linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.88));
-      border:1px solid rgba(255,255,255,0.55);
-      box-shadow:0 22px 70px rgba(0,0,0,0.25);
+      padding:38px 18px 28px;
+      background:var(--card);
+      border:1px solid rgba(0,0,0,0.08);
+      box-shadow:0 28px 60px rgba(0,0,0,0.08);
       position:relative;
       overflow:hidden;
       text-align:center;
@@ -165,8 +168,8 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
       position:absolute;
       inset:-2px;
       background:
-        radial-gradient(520px 260px at 50% 0%, rgba(179,106,94,0.22), transparent 60%),
-        radial-gradient(520px 260px at 0% 40%, rgba(0,0,0,0.06), transparent 62%);
+        radial-gradient(520px 260px at 50% 0%, rgba(183,163,107,0.16), transparent 60%),
+        radial-gradient(520px 260px at 0% 40%, rgba(0,0,0,0.04), transparent 62%);
       pointer-events:none;
     }
     .hero > *{position:relative; z-index:1;}
@@ -178,10 +181,11 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
       border:1px solid rgba(0,0,0,0.10);
       display:grid;
       place-items:center;
-      background:rgba(255,255,255,0.85);
+      background:rgba(246,249,246,0.95);
       font-family:"Playfair Display", serif;
       font-weight:600;
       letter-spacing:0.06em;
+      color:var(--ink);
     }
 
     .kicker{
@@ -191,8 +195,8 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
       gap:8px;
       padding:8px 14px;
       border-radius:999px;
-      border:1px solid var(--accent2);
-      background:rgba(179,106,94,0.10);
+      border:1px solid var(--accent-soft);
+      background:rgba(183,163,107,0.08);
       font-size:12px;
       letter-spacing:0.18em;
       text-transform:uppercase;
@@ -204,30 +208,30 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
       margin:10px 0 0;
       font-family:"Playfair Display", serif;
       font-weight:600;
-      letter-spacing:0.06em;
+      letter-spacing:0.07em;
       text-transform:uppercase;
-      font-size:clamp(24px, 3.8vw, 46px);
+      font-size:clamp(24px, 3.4vw, 40px);
       line-height:1.12;
       white-space:nowrap;
     }
-    @media (max-width: 520px){
+    @media (max-width: 560px){
       .names{white-space:normal;}
     }
 
     .date{
       margin:10px 0 0;
       font-size:16px;
-      color:rgba(15,20,18,0.78);
+      color:var(--muted);
     }
     .date strong{
       color:var(--ink);
-      border-bottom:1px solid var(--accent2);
+      border-bottom:1px solid var(--accent-soft);
       padding-bottom:2px;
     }
 
     .sub{
       margin:6px 0 0;
-      color:rgba(15,20,18,0.72);
+      color:var(--muted);
       font-size:14px;
     }
     .sub strong{color:var(--accent); font-weight:600;}
@@ -236,27 +240,29 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
       margin:16px auto 10px;
       width:210px;
       height:1px;
-      background:linear-gradient(to right, transparent, rgba(179,106,94,0.78), transparent);
+      background:linear-gradient(to right, transparent, rgba(183,163,107,0.78), transparent);
     }
 
+    /* Countdown */
     .countdownWrap{margin-top:12px;}
     .countLabel{
       margin:0 0 10px;
       font-size:13px;
-      color:rgba(15,20,18,0.62);
+      color:var(--muted);
     }
     .countdown{display:flex; gap:10px; justify-content:center; flex-wrap:wrap;}
     .cd{
-      min-width:88px;
-      border:1px solid rgba(0,0,0,0.10);
+      min-width:92px;
+      border:1px solid rgba(0,0,0,0.08);
       border-radius:16px;
-      background:rgba(255,255,255,0.82);
-      padding:10px 12px;
+      background:var(--bg-soft);
+      padding:12px 12px;
       text-align:center;
     }
     .cd .n{font-size:18px; font-weight:600;}
-    .cd .l{font-size:11px; color:rgba(15,20,18,0.62); letter-spacing:0.08em; text-transform:uppercase;}
+    .cd .l{font-size:11px; color:var(--muted); letter-spacing:0.10em; text-transform:uppercase;}
 
+    /* Layout */
     .grid{display:grid; grid-template-columns:1fr; gap:14px; margin-top:16px;}
     @media (min-width: 900px){
       .grid{grid-template-columns:1.12fr 0.88fr;}
@@ -264,10 +270,10 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
 
     .card{
       background:var(--card);
-      border:1px solid rgba(255,255,255,0.60);
+      border:1px solid rgba(0,0,0,0.08);
       border-radius:var(--r);
-      padding:20px 18px;
-      box-shadow:0 18px 50px rgba(0,0,0,0.18);
+      padding:22px 20px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.08);
     }
 
     h2{
@@ -282,7 +288,7 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
     .muted{color:var(--muted);}
 
     .kv{display:grid; grid-template-columns:120px 1fr; gap:10px 14px; margin-top:10px;}
-    .k{color:rgba(15,20,18,0.62); font-size:13px;}
+    .k{color:var(--muted); font-size:13px;}
     .v{font-size:14px;}
 
     .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;}
@@ -295,34 +301,31 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
       border-radius:14px;
       padding:12px 14px;
       border:1px solid rgba(0,0,0,0.10);
-      background:#111;
-      color:#fff;
       font-weight:500;
       font-size:14px;
       min-width:170px;
       cursor:pointer;
-      box-shadow:0 12px 30px rgba(0,0,0,0.12);
       transition: transform 180ms ease, filter 180ms ease;
     }
-    .btn:hover{filter:brightness(1.03); text-decoration:none; transform: translateY(-1px);}
+    .btn:hover{filter:brightness(1.02); text-decoration:none; transform: translateY(-1px);}
 
     .btn.accent{
-      background:linear-gradient(180deg, #c97a6f, #b36a5e);
-      border-color:rgba(179,106,94,0.55);
-      color:#101010;
-      box-shadow:0 14px 34px rgba(179,106,94,0.22);
+      background:linear-gradient(180deg, #c9b57f, #b7a36b);
+      border-color:rgba(183,163,107,0.55);
+      color:#1b1a16;
+      box-shadow:0 14px 34px rgba(183,163,107,0.20);
     }
 
     .btn.secondary{
-      background:rgba(255,255,255,0.92);
+      background:rgba(255,255,255,0.95);
       color:var(--ink);
-      border-color:rgba(179,106,94,0.22);
+      border-color:rgba(183,163,107,0.25);
       box-shadow:none;
     }
 
     .divider2{
       height:1px;
-      background:linear-gradient(to right, transparent, rgba(179,106,94,0.35), transparent);
+      background:linear-gradient(to right, transparent, rgba(0,0,0,0.10), transparent);
       margin:14px 0;
     }
 
@@ -336,15 +339,15 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
       height:280px;
       border:0;
       border-radius:16px;
-      box-shadow:0 14px 34px rgba(0,0,0,0.12);
+      box-shadow:0 14px 34px rgba(0,0,0,0.10);
     }
 
     footer{
       margin-top:18px;
       padding-top:18px;
-      border-top:1px solid rgba(255,255,255,0.14);
+      border-top:1px solid rgba(0,0,0,0.08);
       text-align:center;
-      color:rgba(255,255,255,0.70);
+      color:var(--muted);
       font-size:12px;
     }
 
@@ -355,7 +358,7 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
 <body>
   <header>
     <div class="nav">
-      <div class="brand">Aida Beširović & Elmar Žiko</div>
+      <div class="brand">Aida Beširović &amp; Elmar Žiko</div>
 
       <nav class="links" aria-label="Navigation">
         <a href="#details">Details</a>
@@ -382,10 +385,9 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
 
   <main class="wrap">
     <section class="hero" id="top">
-      <div class="monogram" aria-hidden="true">A&E</div>
+      <div class="monogram" aria-hidden="true">A&amp;E</div>
 
       <p class="kicker" aria-label="Hochzeit">
-        <!-- Ringe mit Diamant -->
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <circle cx="9.6" cy="13.2" r="5.2" stroke="currentColor" stroke-width="1.5"/>
           <circle cx="14.4" cy="11.2" r="5.2" stroke="currentColor" stroke-width="1.5"/>
@@ -395,15 +397,11 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
         <span>Wir heiraten</span>
       </p>
 
-      <h1 class="names" aria-label="Namen">
-        AIDA BEŠIROVIĆ &amp; ELMAR ŽIKO
-      </h1>
+      <h1 class="names" aria-label="Namen">AIDA BEŠIROVIĆ &amp; ELMAR ŽIKO</h1>
 
       <div class="divider" aria-hidden="true"></div>
 
-      <p class="date">
-        <strong>27.06.2026</strong> · Luzern
-      </p>
+      <p class="date"><strong>27.06.2026</strong> · Luzern</p>
       <p class="sub"><strong>Hochzeitsparty</strong> im Art Deco Hotel Montana</p>
 
       <div class="countdownWrap" aria-label="Countdown bis zur Hochzeit">
@@ -452,12 +450,12 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
           <p class="muted">Begleitpersonen sind in den Einladungen namentlich erwähnt.</p>
 
           <div class="cta">
-            <a class="btn accent" href="https://forms.gle/Y2LeHdSsWZ6bYEG59" target="_blank" rel="noopener">
-  Rückmeldung zur Hochzeit
-</a>            <a class="btn secondary" href="mailto:elmarzaidab@gmail.com?subject=Rückmeldung%2027.06.2026&body=Name:%0D%0AAnzahl%20Erwachsene:%0D%0AAnzahl%20Kinder:%0D%0AZu%20oder%20Absage:%0D%0AAllergien/Wünsche:%0D%0A">Per E-Mail antworten</a>
+            <a class="btn accent" href="https://forms.gle/Y2LeHdSsWZ6bYEG59" target="_blank" rel="noopener">Rückmeldung zur Hochzeit</a>
+            <a class="btn secondary" href="mailto:elmarzaidab@gmail.com?subject=Rückmeldung%2027.06.2026&body=Name:%0D%0AAnzahl%20Erwachsene:%0D%0AAnzahl%20Kinder:%0D%0AZu%20oder%20Absage:%0D%0AAllergien/Wünsche:%0D%0A">Per E-Mail antworten</a>
           </div>
 
           <p class="muted" style="margin-top:12px; font-size:13px;">
+            Tipp: Das Formular ist am einfachsten, dann ist alles direkt sauber in einer Liste.
           </p>
         </section>
 
@@ -510,12 +508,7 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
           </p>
 
           <div class="cta">
-            <a class="btn accent"
-   href="https://maps.google.com/?q=Parkhaus%20Casino%20Palace%20Luzern"
-   target="_blank" rel="noopener">
-  Auf Google öffnen
-</a>
-
+            <a class="btn accent" href="https://maps.google.com/?q=Parkhaus%20Casino%20Palace%20Luzern" target="_blank" rel="noopener">Auf Google öffnen</a>
           </div>
         </div>
 
@@ -561,14 +554,13 @@ https://elmarzaidab.github.io/wedding/<!doctype html>
     </section>
 
     <footer>
-      © 2026 Aida Beširović & Elmar Žiko. Alle Angaben ohne Gewähr bis final bestätigt.
+      © 2026 Aida Beširović &amp; Elmar Žiko. Alle Angaben ohne Gewähr bis final bestätigt.
     </footer>
   </main>
 
   <script>
     (function(){
       const target = new Date('2026-06-27T17:00:00');
-
       function pad(n){ return String(n).padStart(2,'0'); }
 
       function tick(){
