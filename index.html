@@ -6,7 +6,6 @@
   <title>Aida Beširović & Elmar Žiko, Hochzeit 27.06.2026</title>
   <meta name="description" content="Hochzeitswebsite von Aida Beširović und Elmar Žiko. Alle Infos, RSVP und Kontakt." />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -14,11 +13,14 @@
   <style>
     :root{
       --bg:#fbfaf8;
-      --ink:#111;
+      --ink:#111111;
       --muted:#5a5a5a;
-      --card:#fff;
+      --card:rgba(255,255,255,0.90);
       --line:rgba(0,0,0,0.10);
-      --soft:rgba(0,0,0,0.06);
+
+      --gold:#8b6b2e;
+      --goldSoft:rgba(139,107,46,0.18);
+
       --max:980px;
       --radius:22px;
     }
@@ -26,19 +28,20 @@
     *{box-sizing:border-box;}
     body{
       margin:0;
-      font-family:Inter, system-ui, sans-serif;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--ink);
       background:
-        radial-gradient(1200px 600px at 50% -10%, rgba(0,0,0,0.06), transparent 60%),
-        radial-gradient(900px 500px at 10% 20%, rgba(0,0,0,0.035), transparent 60%),
-        radial-gradient(700px 420px at 90% 30%, rgba(0,0,0,0.03), transparent 62%),
-        repeating-linear-gradient(45deg, rgba(0,0,0,0.015) 0 1px, transparent 1px 14px),
+        radial-gradient(900px 540px at 18% 8%, rgba(139,107,46,0.10), transparent 62%),
+        radial-gradient(760px 520px at 86% 18%, rgba(0,0,0,0.035), transparent 64%),
+        radial-gradient(680px 520px at 70% 100%, rgba(139,107,46,0.06), transparent 62%),
+        repeating-linear-gradient(45deg, rgba(0,0,0,0.012) 0 1px, transparent 1px 14px),
         var(--bg);
       line-height:1.5;
     }
 
     a{color:inherit; text-decoration:none;}
-    .wrap{max-width:var(--max); margin:0 auto; padding:24px 18px 70px;}
+    a.gold{color:var(--gold);}
+    a:hover{text-decoration:underline;}
 
     header{
       position:sticky;
@@ -54,8 +57,8 @@
       margin:0 auto;
       padding:14px 18px;
       display:flex;
-      justify-content:space-between;
       align-items:center;
+      justify-content:space-between;
       gap:12px;
     }
 
@@ -65,44 +68,63 @@
       text-transform:uppercase;
       font-size:12px;
       color:var(--muted);
+      white-space:nowrap;
     }
 
+    .links{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;}
     .links a{
       font-size:13px;
       color:var(--muted);
       padding:6px 10px;
       border-radius:999px;
     }
+    .links a:hover{
+      background:rgba(255,255,255,0.7);
+      text-decoration:none;
+    }
 
-    main{margin-top:24px;}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px 18px 70px;}
 
     .hero{
       text-align:center;
-      background:rgba(255,255,255,0.85);
+      background:rgba(255,255,255,0.86);
       border:1px solid var(--line);
       border-radius:28px;
       padding:36px 18px 28px;
       box-shadow:0 18px 50px rgba(0,0,0,0.05);
+      position:relative;
+      overflow:hidden;
     }
+
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(520px 260px at 50% 0%, rgba(139,107,46,0.10), transparent 60%),
+        radial-gradient(460px 240px at 0% 40%, rgba(0,0,0,0.03), transparent 62%);
+      pointer-events:none;
+    }
+
+    .hero > *{position:relative; z-index:1;}
 
     .names{
       font-family:"Playfair Display", serif;
+      font-weight:600;
       letter-spacing:0.09em;
       text-transform:uppercase;
       font-size:clamp(28px,4.5vw,56px);
       margin:0;
     }
 
-    .amp{margin:0 10px; font-weight:500;}
-
     .divider{
       margin:18px auto;
-      width:140px;
+      width:160px;
       height:1px;
-      background:linear-gradient(to right, transparent, rgba(0,0,0,0.25), transparent);
+      background:linear-gradient(to right, transparent, rgba(139,107,46,0.55), transparent);
     }
 
-    .meta{color:var(--muted); font-size:15px;}
+    .meta{color:var(--muted); font-size:15px; margin:0;}
 
     .countdown{
       display:flex;
@@ -116,13 +138,12 @@
       min-width:90px;
       border:1px solid var(--line);
       border-radius:16px;
-      background:rgba(255,255,255,0.8);
+      background:rgba(255,255,255,0.82);
       padding:10px 12px;
       text-align:center;
     }
-
     .cd .n{font-size:18px; font-weight:600;}
-    .cd .l{font-size:11px; text-transform:uppercase; color:var(--muted);}
+    .cd .l{font-size:11px; text-transform:uppercase; color:var(--muted); letter-spacing:0.06em;}
 
     .grid{
       display:grid;
@@ -130,13 +151,22 @@
       gap:18px;
       margin-top:28px;
     }
-
     @media(min-width:900px){
       .grid{grid-template-columns:1.2fr 0.8fr;}
     }
 
+    .two{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+      align-items:start;
+    }
+    @media(min-width:900px){
+      .two{grid-template-columns:1fr 1fr;}
+    }
+
     .card{
-      background:rgba(255,255,255,0.9);
+      background:var(--card);
       border:1px solid var(--line);
       border-radius:var(--radius);
       padding:22px 20px;
@@ -147,6 +177,8 @@
       font-family:"Playfair Display", serif;
       font-size:22px;
       margin:0 0 10px;
+      color:var(--gold);
+      letter-spacing:0.01em;
     }
 
     p{margin:0 0 10px;}
@@ -158,7 +190,6 @@
       gap:8px 14px;
       font-size:14px;
     }
-
     .k{color:var(--muted);}
 
     .btn{
@@ -174,9 +205,16 @@
       margin-top:10px;
     }
 
+    .btn.gold{
+      background:var(--gold);
+      border-color:var(--gold);
+      color:#fff;
+    }
+
     .btn.secondary{
       background:#fff;
       color:#111;
+      border-color:var(--goldSoft);
     }
 
     footer{
@@ -195,6 +233,7 @@
     <div class="links">
       <a href="#details">Details</a>
       <a href="#rsvp">Rückmeldung</a>
+      <a href="#location">Location</a>
       <a href="#faq">FAQ</a>
       <a href="#kontakt">Kontakt</a>
     </div>
@@ -204,11 +243,11 @@
 <main class="wrap">
 
   <section class="hero">
-    <h1 class="names">AIDA BEŠIROVIĆ <span class="amp">&</span> ELMAR ŽIKO</h1>
+    <h1 class="names">AIDA BEŠIROVIĆ <span style="margin:0 10px;">&</span> ELMAR ŽIKO</h1>
     <div class="divider"></div>
-    <p class="meta">Samstag, 27. Juni 2026 · Luzern</p>
+    <p class="meta">Samstag, 27. Juni 2026, Luzern</p>
 
-    <div class="countdown">
+    <div class="countdown" aria-label="Countdown bis zur Hochzeit">
       <div class="cd"><div class="n" id="cdD">--</div><div class="l">Tage</div></div>
       <div class="cd"><div class="n" id="cdH">--</div><div class="l">Std</div></div>
       <div class="cd"><div class="n" id="cdM">--</div><div class="l">Min</div></div>
@@ -217,7 +256,6 @@
   </section>
 
   <div class="grid">
-
     <section class="card" id="details">
       <h2>Einladung</h2>
       <p>Gemeinsam mit unseren Familien laden wir euch ein, unsere Hochzeit zu feiern.</p>
@@ -230,16 +268,17 @@
         <div class="k">Party</div><div>ab ca. 22.00 Uhr</div>
       </div>
 
-      <a class="btn" href="https://maps.google.com/?q=Art%20Deco%20Hotel%20Montana%20Luzern" target="_blank">Route öffnen</a>
+      <a class="btn gold" href="https://maps.google.com/?q=Art%20Deco%20Hotel%20Montana%20Luzern" target="_blank" rel="noopener">Route öffnen</a>
     </section>
 
     <aside>
-
       <section class="card" id="rsvp">
         <h2>Rückmeldung</h2>
         <p>Bitte Zu oder Absage bis <strong>30.04.2026</strong>.</p>
-        <a class="btn" href="[RSVP-LINK-HIER-EINFÜGEN]" target="_blank">RSVP ausfüllen</a>
-        <a class="btn secondary" href="mailto:elmarzaidab@gmail.com">Per E-Mail antworten</a>
+        <p class="muted">Begleitpersonen sind in den Einladungen namentlich erwähnt.</p>
+
+        <a class="btn gold" href="[RSVP-LINK-HIER-EINFÜGEN]" target="_blank" rel="noopener">RSVP ausfüllen</a>
+        <a class="btn secondary" href="mailto:elmarzaidab@gmail.com?subject=RSVP%2027.06.2026">Per E-Mail antworten</a>
       </section>
 
       <section class="card" style="margin-top:18px;">
@@ -247,21 +286,76 @@
         <p>Eure Anwesenheit ist für uns das schönste Geschenk.</p>
         <p class="muted">Weitere Aufmerksamkeiten sind selbstverständlich freiwillig.</p>
       </section>
-
     </aside>
   </div>
 
+  <section class="card" id="location" style="margin-top:18px;">
+    <h2>Location</h2>
+    <div class="two" style="margin-top:12px;">
+      <div>
+        <p><strong>Art Deco Hotel Montana</strong><br>
+          Adligenswilerstrasse 22<br>
+          6002 Luzern</p>
+
+        <p class="muted">Die Feier findet vollständig vor Ort statt.</p>
+        <p class="muted">Übernachtung: Einen Link für Zimmer mit Rabatt im Hotel Montana stellen wir hier in Kürze bereit.</p>
+
+        <a class="btn secondary" href="https://maps.google.com/?q=Art%20Deco%20Hotel%20Montana%20Luzern" target="_blank" rel="noopener">In Google Maps öffnen</a>
+      </div>
+
+      <div>
+        <iframe
+          title="Karte Hotel Montana"
+          src="https://www.google.com/maps?q=Art%20Deco%20Hotel%20Montana%20Luzern&output=embed"
+          width="100%" height="280"
+          style="border:0; border-radius:16px; box-shadow:0 12px 28px rgba(0,0,0,0.06);"
+          loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
   <section class="card" id="faq" style="margin-top:18px;">
     <h2>FAQ</h2>
-    <p><strong>Dürfen Kinder mitkommen?</strong><br>Ja, Kinder sind herzlich willkommen.</p>
-    <p><strong>Übernachtung?</strong><br>Ein Rabatt-Link für das Hotel Montana wird hier noch ergänzt.</p>
+
+    <p><strong>Dürfen Kinder mitkommen?</strong><br>
+      Ja, Kinder sind herzlich willkommen.</p>
+
+    <p><strong>Begleitungen?</strong><br>
+      Begleitpersonen sind in den Einladungen namentlich erwähnt.</p>
+
+    <p><strong>Essen, Allergien, Wünsche?</strong><br>
+      Bitte direkt im RSVP angeben. Wir berücksichtigen das so gut wie möglich.</p>
+
+    <p><strong>Übernachtung?</strong><br>
+      Wer im Hotel Montana oder in der Nähe übernachten möchte, bucht am besten früh. Einen Link für Zimmer mit Rabatt im Hotel Montana stellen wir hier in Kürze bereit.</p>
+
+    <p><strong>Dresscode?</strong><br>
+      [Einfügen, z.B. festlich.]</p>
+
+    <p><strong>Wann soll ich da sein?</strong><br>
+      Rechnet bitte damit, ab ca. 17.00 Uhr vor Ort zu sein. Der Ablauf ist bewusst grob, wir feiern entspannt.</p>
+
+    <p><strong>Parkieren, Anreise?</strong><br>
+      Am einfachsten kommt ihr mit ÖV oder Taxi. Wer mit dem Auto kommt, nutzt bitte die Parkmöglichkeiten in der Nähe. Details folgen, sobald wir alles final bestätigt haben.</p>
+
+    <p><strong>Rauchen?</strong><br>
+      Bitte nur in den dafür vorgesehenen Bereichen.</p>
+
+    <p><strong>Reden, Überraschungen, Beiträge?</strong><br>
+      Sehr gerne, aber bitte kurz vorher mit uns abstimmen, damit es in den Ablauf passt.</p>
+
+    <p><strong>Fotos?</strong><br>
+      Sehr gerne. Wenn ihr Bilder macht, freuen wir uns, wenn ihr sie später mit uns teilt.</p>
+
+    <p><strong>Kontakt am Tag selbst?</strong><br>
+      Am einfachsten per WhatsApp oder SMS.</p>
   </section>
 
   <section class="card" id="kontakt" style="margin-top:18px;">
     <h2>Kontakt</h2>
     <div class="kv">
-      <div class="k">WhatsApp / SMS</div><div><a href="tel:+41763320726">+41 76 332 07 26</a></div>
-      <div class="k">E-Mail</div><div>elmarzaidab@gmail.com</div>
+      <div class="k">WhatsApp / SMS</div><div><a class="gold" href="tel:+41763320726">+41 76 332 07 26</a></div>
+      <div class="k">E-Mail</div><div><a class="gold" href="mailto:elmarzaidab@gmail.com">elmarzaidab@gmail.com</a></div>
     </div>
   </section>
 
@@ -274,13 +368,18 @@
 <script>
 (function(){
   const target = new Date('2026-06-27T17:00:00');
+  function pad(n){ return String(n).padStart(2,'0'); }
   function tick(){
-    const d = Math.max(0, target - new Date());
-    const s = Math.floor(d/1000);
-    document.getElementById('cdD').textContent = Math.floor(s/86400);
-    document.getElementById('cdH').textContent = Math.floor(s%86400/3600);
-    document.getElementById('cdM').textContent = Math.floor(s%3600/60);
-    document.getElementById('cdS').textContent = s%60;
+    const diff = Math.max(0, target - new Date());
+    const total = Math.floor(diff/1000);
+    const d = Math.floor(total/86400);
+    const h = Math.floor((total%86400)/3600);
+    const m = Math.floor((total%3600)/60);
+    const s = total%60;
+    document.getElementById('cdD').textContent = pad(d);
+    document.getElementById('cdH').textContent = pad(h);
+    document.getElementById('cdM').textContent = pad(m);
+    document.getElementById('cdS').textContent = pad(s);
   }
   tick();
   setInterval(tick,1000);
